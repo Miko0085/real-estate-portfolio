@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-05",
+  "ci": {
+    "tests": 17,
+    "sourceAuditChecks": 124,
+    "typescript": true,
+    "astro": true,
+    "staticBuild": true,
+    "githubPagesDeployment": true
+  },
+  "htmlRoutes": 30,
+  "newSites": {
+    "pages": 27,
+    "images": 69,
+    "referencesChecked": 657,
+    "unresolvedReferences": 0,
+    "byApp": {
+      "investor-advisory": {
+        "pages": 2,
+        "images": 3,
+        "references": 36
+      },
+      "luxury-brokerage": {
+        "pages": 21,
+        "images": 54,
+        "references": 544
+      },
+      "seller-leads": {
+        "pages": 2,
+        "images": 2,
+        "references": 33
+      },
+      "developer-project": {
+        "pages": 2,
+        "images": 10,
+        "references": 44
+      }
+    }
+  },
+  "limitations": [
+    "No browser-level Playwright validation: Chromium navigation blocked by environment",
+    "No audited Lighthouse or full WCAG 2.2 AA verification",
+    "Forms require a configured compliant HTTPS API to submit real leads"
+  ]
+}

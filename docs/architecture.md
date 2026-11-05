@@ -1,14 +1,18 @@
-# Architecture decisions — ADR 001
+# Architecture — Real Estate Portfolio
 
-- **Static Astro (all five apps).** Avoid client-side hydration unless an interaction materially requires it; first app uses browser-native `<details>`, form enhancement and a few lines of vanilla TypeScript.
-- **npm workspaces** keep Cloudflare deployment configuration simple without mandatory pnpm.
-- **Tailwind 4 via `@tailwindcss/vite`**, with site-specific authored CSS for designed components. Shared tokens are defaults, not a mandate to homogenize the five sites.
-- **Shared packages** are compiled from `src/index.ts` by Astro/Vite; no runtime service or database dependency.
-- **Per-app SEO/site URLs** with noindex as the safe demo default; sitemap and robots generated at build time.
-- **Forms** validate client-side, never fabricate submission; opt-in endpoint and server responsibility for validation, consent logging, DNC and rate limits.
-- **Attribution** captures UTM + gclid from the landing URL in sessionStorage (tab scope; best effort), persists to lead payload, no third-party analytics loaded by default.
-- **No schema spam**: static sample landing uses WebPage and BreadcrumbList only. No made-up offers/ratings/business identity schema.
-- **Progressive enhancement**: legal link, navigation, information and FAQ work without JS; form requires JS to connect a configured endpoint and transparently states demo mode.
-- **Gates:** (1) source review + references; (2) local build/types + unit tests; (3) visual and responsive QA; (4) axe/Lighthouse + manual screen-reader/keyboard; (5) independent apps only after phase 1 passes.
+- Five distinct static Astro applications inside an npm workspaces monorepo; each application has its own styling, pages and documentation.
+- Tailwind CSS 4 / Vite, authored CSS and lightweight TypeScript enhancements instead of application-wide React hydration.
+- Shared packages: UI/layout, typography, design tokens, analytics, form handling, SEO, structured data and utilities.
+- Investor Advisory: interactive qualification steps, illustrative profiles, gross/net yield calculator.
+- Luxury Brokerage: statically generated crawlable property, development and area routes; filtering with URL query parameters.
+- Seller Leads: progressive three-step qualification form and seller education.
+- Developer Project: architecture, residences, masterplan, floorplans, brochure, gallery and registration form.
+- Dubai Off-Plan: retained original project-focused demo with sample brochure and qualification.
+- Delivery: GitHub Actions builds each application with a site-specific BASE_URL and packages them into one GitHub Pages artifact.
+- Campaign attribution captures UTM and GCLID in sessionStorage, with optional consented HTTPS submission. Demo forms never claim a lead was stored when there is no endpoint.
+- Each site emits canonical, OG, robots and sitemap; sample projects are noindex by default; minimal WebPage/BreadcrumbList schema only.
+- Security note: GitHub Pages hosts files only. It cannot act as a CRM receiver or apply Cloudflare _headers rules; a real backend requires server validation, privacy policy, consent records and anti-abuse controls.
 
-Sources: https://docs.astro.build/en/guides/styling/ ; https://tailwindcss.com/docs/installation/framework-guides/astro ; https://developers.cloudflare.com/pages/configuration/monorepos/
+## QA gates
+
+Source unit tests and builds have passed. A generated-site link/asset audit has passed; browser visual, keyboard, accessibility and Lighthouse checks must be completed separately before claiming formal production certification.

@@ -1,18 +1,22 @@
 # Portfolio QA status — 2026-11-05
 
-## Completed locally before GitHub publication
+## Completed
 
-- Four additional Astro applications implemented with distinct design systems, content, accessible form flows and demo disclosures.
-- Shared layout, form submission abstraction, campaign attribution and financial calculator module added.
-- 17 unit/source tests pass; TypeScript source checking passes; source structure audit passes.
-- PDF sample brochure rendered and visually inspected.
+- Four additional Astro applications implemented with separate design systems, static SEO metadata, demo disclosures and functional source code.
+- GitHub Actions: npm installation, 17 tests, 124 structural source checks, TypeScript source checks, Astro checks and production static builds: **passed**.
+- GitHub Pages deployment workflow: **successful**.
+- Downloaded the generated GitHub Pages artifact and audited the HTML output.
+- 30 generated HTML routes (including the original Dubai site and portfolio index) returned HTTP 200 under the local GitHub Pages path prefix.
+- Four new sites: 27 generated HTML pages, 69 image references, 657 internal link and asset references inspected; **zero unresolved references** after fixing three Investor Advisory SVG paths.
+- Developer concept brochure generated and visually rendered.
 
-## Outstanding release validation
+## Pending / not claimed
 
-- Run Astro and TypeScript check plus build for all apps in GitHub Actions (npm registry unavailable in local environment).
-- Validate generated routes, images, canonical URLs and links from the GitHub Actions build artifact.
-- Run Chromium at 320, 375, 430, 768, 1024 and 1440 px; check overflow and interactive flows.
-- Lighthouse and screen-reader verification are separate acceptance gates; no metrics claimed without measurements.
-- GitHub Pages cannot process POST submissions; external HTTPS lead endpoint is deliberately not configured.
+- Automated Playwright/Chromium visual and interactive tests were blocked by the execution environment even for local files. Manual responsive and keyboard verification is still recommended at 320, 375, 430, 768, 1024 and 1440 px.
+- No audited Lighthouse LCP/INP/CLS scores or certified WCAG 2.2 AA compliance claims are made.
+- No live lead receiver, CRM, real listings, production analytics or confirmed financial outputs are connected.
+- GitHub Pages does not enforce Cloudflare-style _headers; use a platform supporting security headers for a real lead-capture deployment.
 
-All inventory, prices, market scenarios, people, businesses and architectural imagery in these four apps are fictional examples.
+## Provenance
+
+All showcased brands, property information, prices, images, floor plans and timelines are fictional or illustrative. Documentation of research references is contained within each site's docs/references.md.
