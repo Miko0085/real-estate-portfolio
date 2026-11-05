@@ -24,7 +24,8 @@ if(quiz){
     if(step<6 && !radio){error.textContent='Select an option to continue.';return;}
     if(radio)data[radio.name]=radio.value;
     if(step<6){step++;update();steps[step].querySelector<HTMLElement>('legend')?.focus();return;}
-    // Keep the contact and consent controls visible alongside results so native validation can focus them.\n    next.hidden=true;back.hidden=false;error.textContent='';result.hidden=false;
+    // Keep the contact and consent controls visible alongside results so native validation can focus them.
+    next.hidden=true;back.hidden=false;error.textContent='';result.hidden=false;
     const market=data.market==='open'?'several markets':({dubai:'Dubai',lisbon:'Lisbon',london:'London'}[data.market]||'selected market');
     const objective=({income:'income-focused',growth:'growth-oriented',diversify:'diversification',personal:'personal-use'}[data.objective]||'balanced');
     const summary=quiz.querySelector<HTMLElement>('[data-brief-summary]')!;
