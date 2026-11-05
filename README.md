@@ -54,3 +54,21 @@ No fabricated testimonials, property transactions, licenses, commercial results 
 ## GitHub publication
 
 The repository archive is import-ready. Create an **empty** GitHub repo, `git init`, `git add .`, `git commit`, and `git remote add origin <your-new-repository-url>` then push. No existing user repository is silently changed.
+
+## GitHub Pages portfolio deployment
+
+The public static showcase is hosted at `https://miko0085.github.io/real-estate-portfolio/` after GitHub Pages is enabled. The portfolio root links to each independently built Astro app under its own subdirectory.
+
+**One-time GitHub setting**: Repository → Settings → Pages → Build and deployment → Source **GitHub Actions**. The `.github/workflows/deploy-pages.yml` workflow then installs dependencies, checks code, builds all five apps with their GitHub Pages base paths, assembles a single `pages-dist` artifact, and deploys it.
+
+The four non-Dubai apps are **explicitly unlaunched demo scaffolds**. The Dubai qualification form validates locally but does **not send leads** until a compliant HTTPS endpoint is configured. No server-side functions are provided by GitHub Pages. Public portfolio pages are noindexed intentionally while demo content remains fictional.
+
+Local dry run:
+
+```bash
+npm install
+GITHUB_PAGES=true npm run build:all
+node scripts/assemble-pages.mjs
+```
+
+The standalone apps can still build for other static hosts with their normal root URLs when `GITHUB_PAGES` is unset.

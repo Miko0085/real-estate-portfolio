@@ -3,7 +3,7 @@ import { enhanceLeadForms } from './lead-form';
 
 readAttribution();
 track('page_view', { path: window.location.pathname, page_type: 'offplan_landing_demo' });
-if (window.location.pathname === '/') track('view_development',{ development: 'maris-demo' });
+if (document.querySelector('.hero')) track('view_development',{ development: 'maris-demo' });
 
 document.addEventListener('click', event => {
   const target = event.target;

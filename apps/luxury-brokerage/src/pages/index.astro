@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import Seo from '@estate/seo/Seo.astro';
-const home = new URL('/', Astro.site || new URL('https://example.com'));
+const home = Astro.site || new URL('https://example.com/');
 ---
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><Seo title="ATELIER / ESTATES — portfolio concept (not launched)" description="Original real-estate website portfolio scaffold. Not a live property business." canonical={home.toString()} image={new URL('/og-cover.svg',home).toString()} noindex={true} /></head>
-<body><main class="placeholder"><div class="label">REAL ESTATE PORTFOLIO / NOT LAUNCHED</div><div class="divider"></div><p class="brand">ATELIER / ESTATES</p><h1>Exceptional spaces. Considered choices.</h1><p class="description">A full editorial brokerage catalogue is planned. Listings, filters and property pages are not yet implemented.</p><div class="lower"><span>ORIGINAL DESIGN DIRECTION</span><span>REFERENCE RESEARCH COMPLETE · IMPLEMENTATION PENDING</span></div></main><footer>Fictional brand · portfolio design exploration · <a href="/">Home</a></footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><Seo title="ATELIER / ESTATES — portfolio concept (not launched)" description="Original real-estate website portfolio scaffold. Not a live property business." canonical={home.toString()} image={new URL('og-cover.svg',home).toString()} noindex={true} /></head>
+<body><main class="placeholder"><div class="label">REAL ESTATE PORTFOLIO / NOT LAUNCHED</div><div class="divider"></div><p class="brand">ATELIER / ESTATES</p><h1>Exceptional spaces. Considered choices.</h1><p class="description">A full editorial brokerage catalogue is planned. Listings, filters and property pages are not yet implemented.</p><div class="lower"><span>ORIGINAL DESIGN DIRECTION</span><span>REFERENCE RESEARCH COMPLETE · IMPLEMENTATION PENDING</span></div></main><footer>Fictional brand · portfolio design exploration · <a href={import.meta.env.BASE_URL}>Home</a></footer></body></html>

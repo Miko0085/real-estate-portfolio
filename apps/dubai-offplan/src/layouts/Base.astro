@@ -6,10 +6,10 @@ import { webPageSchema, breadcrumbs } from '@estate/structured-data';
 interface Props { title:string; description:string; path?:string; }
 const { title, description, path='/' } = Astro.props;
 const base = Astro.site || new URL('https://example.com/');
-const canonical = new URL(path, base).toString();
-const image = new URL('/og-cover.png',base).toString();
+const canonical = new URL(path.replace(/^\/+/, ''), base).toString();
+const image = new URL('og-cover.png',base).toString();
 const index = import.meta.env.PUBLIC_INDEX_SITE === 'true' && Boolean(import.meta.env.PUBLIC_SITE_URL);
-const jsonLd = [webPageSchema({name:title,description,url:canonical}),breadcrumbs([{name:'Home',url:new URL('/',base).toString()}])];
+const jsonLd = [webPageSchema({name:title,description,url:canonical}),breadcrumbs([{name:'Home',url:new URL('.',base).toString()}])];
 ---
 <!doctype html>
 <html lang="en" data-analytics-enabled={import.meta.env.PUBLIC_ANALYTICS_ENABLED === 'true' ? 'true':'false'}>
@@ -19,7 +19,7 @@ const jsonLd = [webPageSchema({name:title,description,url:canonical}),breadcrumb
   <meta name="theme-color" content="#173b3d" />
   <meta name="color-scheme" content="light" />
   <Seo title={title} description={description} canonical={canonical} image={image} noindex={!index} jsonLd={jsonLd} />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>

@@ -13,5 +13,5 @@ for(const a of ['coastal-residence.svg','interior-concept.svg','pool-concept.svg
 verify(existsSync(join(root,'apps/dubai-offplan/public/brochure/maris-sample-brochure.pdf')),'sample brochure');
 verify(existsSync(join(root,'apps/dubai-offplan/src/styles/global.css')),'offplan responsive stylesheet');
 verify(existsSync(join(root,'apps/dubai-offplan/src/scripts/lead-form.ts')),'form enhancement');
-verify(source.includes('method="post" action="/api/lead"'), 'safe POST fallback if client JS is unavailable');
+verify(source.includes('method="post"') && source.includes("action={import.meta.env.PUBLIC_LEAD_ENDPOINT || 'https://example.invalid/not-connected'}"), 'safe POST fallback if client JS is unavailable');
 console.log(`Static source audit: ${successes.length} passed, ${failures.length} failed.`);for(const issue of failures)console.error('FAIL',issue);process.exitCode=failures.length?1:0;
