@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@estate/analytics": ["packages/analytics/src/index.ts"],
+      "@estate/forms": ["packages/forms/src/index.ts"],
+      "@estate/structured-data": ["packages/structured-data/src/index.ts"],
+      "@estate/seo": ["packages/seo/src/index.ts"],
+      "@estate/design-tokens": ["packages/design-tokens/src/index.ts"],
+      "@estate/typography": ["packages/typography/src/index.ts"],
+      "@estate/utils": ["packages/utils/src/index.ts"],
+      "@estate/ui": ["packages/ui/src/index.ts"]
+    }
+  },
+  "include": ["packages/**/*.ts", "apps/dubai-offplan/src/scripts/**/*.ts", "apps/dubai-offplan/src/data/**/*.ts"],
+  "exclude": ["**/node_modules", "**/dist"]
+}

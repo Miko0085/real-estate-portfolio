@@ -1,0 +1,22 @@
+{
+  "name": "@estate/dubai-offplan",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "preview": "astro preview --host 0.0.0.0",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@estate/ui": "*",
+    "@estate/typography": "*",
+    "@estate/design-tokens": "*",
+    "@estate/forms": "*",
+    "@estate/analytics": "*",
+    "@estate/seo": "*",
+    "@estate/structured-data": "*",
+    "@estate/utils": "*"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@estate/forms",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Form validation, submission and result mapping.",
+  "exports": {
+    "./*": "./src/*",
+    ".": "./src/index.ts"
+  }
+}

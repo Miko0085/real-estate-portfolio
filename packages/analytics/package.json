@@ -1,0 +1,11 @@
+{
+  "name": "@estate/analytics",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Consent-aware event and session campaign attribution helpers.",
+  "exports": {
+    "./*": "./src/*",
+    ".": "./src/index.ts"
+  }
+}

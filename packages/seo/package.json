@@ -1,0 +1,11 @@
+{
+  "name": "@estate/seo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Astro SEO metadata and social tags.",
+  "exports": {
+    "./*": "./src/*",
+    ".": "./src/index.ts"
+  }
+}

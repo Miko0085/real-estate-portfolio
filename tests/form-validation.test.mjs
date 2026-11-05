@@ -1,0 +1,17 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { validateOffplan, submitLead } from '../packages/forms/src/index.ts';
+import { captureAttribution } from '../packages/analytics/src/index.ts';
+import { safeHttpUrl,slugify } from '../packages/utils/src/index.ts';
+const valid={budget:'1.5-2.5m',property_type:'2-bedroom',purpose:'investment',timeline:'1-3-months',financing:'cash',name:'Jane Example',email:'jane@example.com',phone:'',consent:true};
+test('valid buyer qualification accepts one contact route',()=>assert.deepEqual(validateOffplan(valid),[]));
+test('rejects missing qualification fields and absent contact',()=>{const errors=validateOffplan({});assert.equal(errors.length,9);assert.ok(errors.find(x=>x.field==='consent'));});
+test('rejects malformed email and malformed phone',()=>{const e=validateOffplan({...valid,email:'no-at',phone:'xyz'});assert.ok(e.some(x=>x.field==='email'));assert.ok(e.some(x=>x.field==='phone'));});
+test('prevents invalid enum injection',()=>{const e=validateOffplan({...valid,budget:'AED 2M <script>'});assert.ok(e.find(x=>x.field==='budget'));});
+test('rejects no consent',()=>{const e=validateOffplan({...valid,consent:false});assert.equal(e.find(x=>x.field==='consent')?.field,'consent');});
+test('tracks UTM and GCLID while ignoring unrelated query params',()=>assert.deepEqual(captureAttribution('?utm_source=google&utm_medium=cpc&utm_campaign=alpha&gclid=ABCD&foo=bar'),{utm_source:'google',utm_medium:'cpc',utm_campaign:'alpha',gclid:'ABCD'}));
+test('overwrites attributed parameters when new tagged link arrives',()=>assert.deepEqual(captureAttribution('?utm_source=meta',{utm_source:'google',utm_campaign:'old'}),{utm_source:'meta',utm_campaign:'old'}));
+test('demo endpoint never reports actual lead generated',async()=>{const result=await submitLead({...valid,attribution:{}},'');assert.equal(result.ok,false);assert.equal(result.demo,true);});
+test('only confirms lead on explicit acknowledged receipt',async()=>{const prior=globalThis.fetch;globalThis.fetch=async()=>new Response(JSON.stringify({ok:true}),{status:200,headers:{'content-type':'application/json'}});try{const r=await submitLead({...valid,attribution:{}},'https://api.example.com/lead');assert.equal(r.ok,false);}finally{globalThis.fetch=prior;}});
+test('acknowledged receipt returns success',async()=>{const prior=globalThis.fetch;globalThis.fetch=async()=>new Response(JSON.stringify({ok:true,lead_id:'example-123'}),{status:201,headers:{'content-type':'application/json'}});try{const r=await submitLead({...valid,attribution:{}},'https://api.example.com/lead');assert.equal(r.ok,true);}finally{globalThis.fetch=prior;}});
+test('HTTP remote endpoints blocked; scripts disallowed as URLs',async()=>{assert.equal((await submitLead({...valid,attribution:{}},'http://insecure.example/submit')).ok,false);assert.equal(safeHttpUrl('javascript:alert(1)'),null);assert.equal(slugify('Dubai Islands / Two Bedrooms'),'dubai-islands-two-bedrooms');});

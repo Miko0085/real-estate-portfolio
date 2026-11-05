@@ -1,0 +1,30 @@
+{
+  "name": "real-estate-portfolio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:offplan": "npm run dev --workspace @estate/dubai-offplan",
+    "build:offplan": "npm run build --workspace @estate/dubai-offplan",
+    "check:offplan": "npm run check --workspace @estate/dubai-offplan",
+    "build:all": "npm run build --workspaces --if-present",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "audit:static": "node scripts/static-audit.mjs",
+    "test:browser": "python scripts/browser-qa.py",
+    "check:source": "tsc -p tsconfig.source-check.json"
+  },
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "devDependencies": {
+    "astro": "^5.16.0",
+    "@tailwindcss/vite": "^4.1.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.0",
+    "@astrojs/check": "^0.9.4"
+  }
+}

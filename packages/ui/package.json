@@ -1,0 +1,11 @@
+{
+  "name": "@estate/ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared accessible Astro presentation primitives.",
+  "exports": {
+    "./*": "./src/*",
+    ".": "./src/index.ts"
+  }
+}

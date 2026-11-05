@@ -1,0 +1,11 @@
+{
+  "name": "@estate/design-tokens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared primitive tokens; per-site skins intentionally diverge.",
+  "exports": {
+    "./*": "./src/*",
+    ".": "./src/index.ts"
+  }
+}

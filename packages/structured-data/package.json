@@ -1,0 +1,11 @@
+{
+  "name": "@estate/structured-data",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Narrow validated Schema.org generators.",
+  "exports": {
+    "./*": "./src/*",
+    ".": "./src/index.ts"
+  }
+}

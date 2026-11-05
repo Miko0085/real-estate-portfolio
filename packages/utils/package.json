@@ -1,0 +1,11 @@
+{
+  "name": "@estate/utils",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pure safe formatting and URL utilities.",
+  "exports": {
+    "./*": "./src/*",
+    ".": "./src/index.ts"
+  }
+}

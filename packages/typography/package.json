@@ -1,0 +1,11 @@
+{
+  "name": "@estate/typography",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared type scales and basic typography helpers.",
+  "exports": {
+    "./*": "./src/*",
+    ".": "./src/index.ts"
+  }
+}
