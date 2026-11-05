@@ -1,11 +1,10 @@
-# CRO decisions
+# CRO decisions — FIELDNOTE Property
 
-**Business problem.** Turn seller valuation interest into a qualified, consented consultation request.
+Business objective: Collect context required for a seller valuation review while explaining that a valuation is never automatically produced.
 
-**Primary conversion.** request consultation/valuation with consent.
+- Three-step seller form: property details → occupancy/value/timeline → contact/consent
+- Accessible field validation with back/continue, progress and local-only demo status
+- Seller process, marketing approach, qualitative market insight examples and FAQs
+- Optional configured HTTPS webhook and attribution capture
 
-**Design hypotheses.** CTA anchored to progressive form; explain next step, avoid claiming instant market value without validated comparables.
-
-**Trust constraints.** Do not fabricate past successes, counts of buyers, transaction rates, reviews, developer credentials, returns or agency licenses. Demo forms must announce whether sending is active. No fake scarcity banners, countdowns or popups.
-
-**Measurement gate.** Use live qualified conversion counts only after connecting a permitted CRM endpoint and gaining consent. No fictitious conversion uplift.
+Avoid false scarcity, fake performance claims and invented trust statistics.

@@ -1,23 +1,50 @@
-# ATELIER Estates · fictional brand
+# ATELIER Estates — Website project
 
-**Build status:** Reference-led scaffold only.
+**Status:** Implemented portfolio demo. Fictional identity, sample prices, original concept imagery; no real clients, sales, inventory, returns or advisory licensing.
 
-**Business problem:** Expose inventory, areas and developments through crawlable detail pages and usable filters.
+## Business problem
+Show how a premium brokerage can organize discovery across properties, neighbourhoods and new developments with real crawlable static URLs.
 
-**Target audience:** International luxury home buyers, sellers, relocators
+## Target audience and traffic
+Buyers and sellers browsing sample high-end Dubai homes.
 
-**Traffic source:** Organic SEO + branded + social direct
+## Design references
+See [references.md](references.md) for 3 real information-architecture and 3 visual-design reference sites, referenced patterns and exclusions.
 
-**Design references:** see [`references.md`](./references.md), containing six real site references, explicit components and copying restrictions.
+## UX and CRO
+The design favours meaningful next actions, legible content, qualified enquiry forms and explicit sample disclosures over invented urgency or fake social proof.
 
-**UX/CRO decisions:** Filters and contextual enquiry, low-noise browsing, relevant area/internal links.
+## Pages
+- `/`
+- `/properties/`
+- `/properties/[slug]/`
+- `/developments/`
+- `/developments/[slug]/`
+- `/areas/`
+- `/areas/[slug]/`
+- `/buy/`
+- `/sell/`
+- `/about/`
+- `/insights/`
+- `/contact/`
+- `/privacy/`
 
-**Technical implementation:** Astro 5 + TypeScript + Tailwind 4 via Vite, CSS art direction unique to this app, static Cloudflare Pages output. Shared UI/SEO/forms/analytics packages. This app is reference-led scaffold only.
 
-**Analytics architecture:** view_property, view_development, contact and qualified enquiry events. Preserved UTMs and GCLID for lead payload, no third-party vendor by default.
+## Functional implementation
+- Six fictional property profiles with price, beds, area, type, status and property detail pages
+- Filter by area, property type, minimum bedrooms, price ceiling and delivery status
+- Two fictional developments, three editorial areas, buying, selling, about, insights, contact
+- Configurable enquiry form with consent and anti-spam honeypot
 
-**AI/coding agent role:** source layout, initial copy, schema decisions, prototypes, and deterministic checks prepared with AI assistance; no claim of real sales or measured impact.
 
-**Demo/sample functionality:** Fictional brand, copy and all illustrative property/financial data. No real client work or actual inventory. This app is a scaffold, not a finished site. Its planned quiz/catalogue/funnel/microsite is NOT implemented.
+## Technology
+Astro static rendering, TypeScript and Tailwind CSS; JavaScript only for necessary form, filter or calculator interactivity. Shared SEO, analytics, structured data and form packages; GitHub Pages build with a path prefix.
 
-**Remaining gates:** dependency install, Astro typecheck/build, touch/keyboard audits, asset licensing review, security/CORS and live conversion checks, Lighthouse on production URL.
+## AI / coding assistance
+Code and design drafts were AI-assisted and refined against reference patterns. This is development-process documentation, **not** a claim about client delivery or results.
+
+## Still demonstration-only
+Lead forms do not transmit by default. A real integration requires an HTTPS API, server-side validation, consent records, rate limiting and privacy notice. All calculations, development facts and offers are illustrative.
+
+## QA
+See `accessibility.md` and `performance.md`; final browser and Lighthouse checks are recorded in repository QA reports rather than asserted from source code alone.

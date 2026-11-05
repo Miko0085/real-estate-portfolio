@@ -1,11 +1,10 @@
-# CRO decisions
+# CRO decisions — SERA / COAST
 
-**Business problem.** Create a compelling architectural narrative and convert interest while clearly distinguishing concepts from real projects.
+Business objective: Present a single premium fictional development through architecture, residences, masterplan and transparent qualification.
 
-**Primary conversion.** registration of interest with floorplan preferences.
+- Architecture, residences, masterplan, amenities, concept location, gallery, example payment plan
+- Two original illustrative floor plan SVGs and downloadable fictional PDF brochure
+- Register-interest form with preferences, consent, honeypot and configured endpoint
+- Original SVG concept visuals for local fast-loading assets
 
-**Design hypotheses.** Emotional story followed by precise decision facts and low-friction register-interest form.
-
-**Trust constraints.** Do not fabricate past successes, counts of buyers, transaction rates, reviews, developer credentials, returns or agency licenses. Demo forms must announce whether sending is active. No fake scarcity banners, countdowns or popups.
-
-**Measurement gate.** Use live qualified conversion counts only after connecting a permitted CRM endpoint and gaining consent. No fictitious conversion uplift.
+Avoid false scarcity, fake performance claims and invented trust statistics.

@@ -1,0 +1,50 @@
+---
+import Seo from '@estate/seo/Seo.astro';
+import { webPageSchema, breadcrumbs } from '@estate/structured-data';
+interface Props {
+  title: string;
+  description: string;
+  brand: string;
+  nav: Array<{ label: string; href: string }>;
+  image?: string;
+  imageAlt?: string;
+  accent?: string;
+  footerNote?: string;
+}
+const { title, description, brand, nav, image='og-cover.svg', imageAlt='Original fictional property portfolio illustration', accent='#161616', footerNote='Fictional brand · Portfolio demonstration only' } = Astro.props;
+const prefix = import.meta.env.BASE_URL;
+const origin = Astro.site || new URL('https://example.com');
+const canonical = new URL(Astro.url.pathname, origin).toString();
+const ogImage = new URL(prefix + image.replace(/^\//,''),origin).toString();
+const index = import.meta.env.PUBLIC_INDEX_SITE === 'true' && Boolean(import.meta.env.PUBLIC_SITE_URL) && import.meta.env.GITHUB_PAGES !== 'true';
+const crumbs=[{name:'Home',url:new URL(prefix,origin).toString()}];
+if(Astro.url.pathname !== prefix) crumbs.push({name:title,url:canonical});
+---
+<!doctype html>
+<html lang="en" data-analytics-enabled={import.meta.env.PUBLIC_ANALYTICS_ENABLED==='true'?'true':'false'}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content={accent} />
+  <Seo title={title} description={description} canonical={canonical} image={ogImage} imageAlt={imageAlt} noindex={!index} jsonLd={[webPageSchema({name:title,description,url:canonical}),breadcrumbs(crumbs)]}/>
+  <link rel="icon" href={`${prefix}favicon.svg`} type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="demo-banner"><span>PORTFOLIO CONCEPT</span><span>Fictional brand · Sample properties, figures and visuals</span></div>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href={prefix} aria-label={`${brand} homepage`}>{brand}</a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        {nav.map(item=><a href={item.href}>{item.label}</a>)}
+      </nav>
+      <details class="mobile-nav"><summary aria-label="Open navigation">Menu <span aria-hidden="true">＋</span></summary>
+        <nav aria-label="Mobile navigation">{nav.map(item=><a href={item.href}>{item.label}</a>)}</nav>
+      </details>
+    </div>
+  </header>
+  <main id="main"><slot /></main>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand" href={prefix}>{brand}</a><p>{footerNote}. No real inventory or transactions.</p><a href={`${prefix}privacy/`}>Privacy & demo notice</a></div></footer>
+  <script>import '@estate/analytics'; import '@estate/forms/portfolio';</script>
+</body>
+</html>

@@ -13,5 +13,17 @@ for(const a of ['coastal-residence.svg','interior-concept.svg','pool-concept.svg
 verify(existsSync(join(root,'apps/dubai-offplan/public/brochure/maris-sample-brochure.pdf')),'sample brochure');
 verify(existsSync(join(root,'apps/dubai-offplan/src/styles/global.css')),'offplan responsive stylesheet');
 verify(existsSync(join(root,'apps/dubai-offplan/src/scripts/lead-form.ts')),'form enhancement');
-verify(source.includes('method="post"') && source.includes("action={import.meta.env.PUBLIC_LEAD_ENDPOINT || 'https://example.invalid/not-connected'}"), 'safe POST fallback if client JS is unavailable');
+verify(source.includes('method="post" action="/api/lead"'), 'safe POST fallback if client JS is unavailable');
+
+const implemented = ['investor-advisory','luxury-brokerage','seller-leads','developer-project'];
+for(const slug of implemented){
+ const base=join(root,'apps',slug), main=readFileSync(join(base,'src/pages/index.astro'),'utf8');
+ verify(!main.includes('NOT LAUNCHED')&&!main.includes('IMPLEMENTATION PENDING'),`${slug}: implemented homepage`);
+ verify(existsSync(join(base,'src/pages/privacy/index.astro')),`${slug}: privacy notice`);
+ verify(existsSync(join(base,'public/favicon.svg')),`${slug}: favicon`);
+ verify(existsSync(join(base,'public/og-cover.svg')),`${slug}: social image`);
+ verify(main.includes('@estate/ui/PortfolioLayout.astro'),`${slug}: shared layout`);
+ verify(existsSync(join(base,'src/pages/sitemap.xml.ts')),`${slug}: sitemap`);
+}
+for(const path of ['packages/ui/src/PortfolioLayout.astro','packages/ui/src/portfolio-base.css','packages/forms/src/portfolio.ts','packages/utils/src/investment.ts'])verify(existsSync(join(root,path)),`shared ${path}`);
 console.log(`Static source audit: ${successes.length} passed, ${failures.length} failed.`);for(const issue of failures)console.error('FAIL',issue);process.exitCode=failures.length?1:0;

@@ -1,6 +1,6 @@
 ---
-interface Props { title: string; description: string; canonical: string; image: string; noindex?: boolean; jsonLd?: Record<string, unknown>[]; }
-const { title, description, canonical, image, noindex=true, jsonLd=[] } = Astro.props;
+interface Props { title: string; description: string; canonical: string; image: string; noindex?: boolean; jsonLd?: Record<string, unknown>[]; imageAlt?: string; }
+const { title, description, canonical, image, noindex=true, jsonLd=[], imageAlt='Illustrative real-estate website concept' } = Astro.props;
 ---
 <title>{title}</title>
 <meta name="description" content={description} />
@@ -11,7 +11,7 @@ const { title, description, canonical, image, noindex=true, jsonLd=[] } = Astro.
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={image} />
-<meta property="og:image:alt" content="Maris Residences — fictional coastal property concept" />
+<meta property="og:image:alt" content={imageAlt} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />

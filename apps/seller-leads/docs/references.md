@@ -1,6 +1,6 @@
 # References — FIELDNOTE Property · fictional brand
 
-Status: Reference-led scaffold only. References researched before implementation. Link to third-party sites for **pattern study only**, not authorization to copy photography, logos, text, code or design in full.
+Status: Implemented portfolio demonstration; all data fictional. References researched before implementation. Link to third-party sites for **pattern study only**, not authorization to copy photography, logos, text, code or design in full.
 
 ## Real websites — information architecture (3)
 

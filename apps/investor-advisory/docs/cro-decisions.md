@@ -1,11 +1,10 @@
-# CRO decisions
+# CRO decisions — NORTHLINE Advisory
 
-**Business problem.** Qualify suitability before presenting illustrative options without promising future performance.
+Business objective: Help international buyers explore suitability, compare markets and understand illustrative rental income before requesting an introduction.
 
-**Primary conversion.** qualified consultation/market selection request.
+- Seven-step budget → objective → market → ready/off-plan → timeline → financing → contact quiz
+- Illustrative recommendations with explicit financial disclaimer
+- Reactive rental calculator: price, rent, charges, management, occupancy, gross and net yield
+- Optional configured HTTPS lead endpoint with consent and campaign attribution
 
-**Design hypotheses.** Show why each field matters; allow skip/back; show option selection after enough data; avoid coercive urgency.
-
-**Trust constraints.** Do not fabricate past successes, counts of buyers, transaction rates, reviews, developer credentials, returns or agency licenses. Demo forms must announce whether sending is active. No fake scarcity banners, countdowns or popups.
-
-**Measurement gate.** Use live qualified conversion counts only after connecting a permitted CRM endpoint and gaining consent. No fictitious conversion uplift.
+Avoid false scarcity, fake performance claims and invented trust statistics.

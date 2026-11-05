@@ -1,5 +1,7 @@
-# Accessibility
+# Accessibility — SERA / COAST
 
-Target WCAG 2.2 AA **where practical**, pending audit. Readable overlay contrast, skip links, alt text, visible controls; no autoplay-only storytelling.
+Target WCAG 2.2 AA where practical. Semantics: main landmark, accessible nav, single page heading, descriptive link names, native details, form labels, required fields, focus-visible outlines, reduced motion and live regions for dynamic messages.
 
-Test 320, 375, 430, 768, 1024 and 1440 px; keyboard-only; zoom to 200%; NVDA/VoiceOver smoke tests; visible focus; meaningful images; named landmarks; controls with labels; `aria-invalid` and error descriptions; prefers-reduced-motion. Passing HTML lint alone is not a WCAG certification.
+Verify: Brochure download, valid floor plan links, enquiry form, accessible navigation, 320–1440px layouts.
+
+Manual keyboard, touch, screen-reader and contrast testing is a separate release task; passing source checks is not equivalent to certified WCAG compliance.

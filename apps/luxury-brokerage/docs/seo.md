@@ -1,7 +1,7 @@
-# SEO
+# SEO — ATELIER Estates
 
-SSR/static-generated crawlable individual listing, development and area detail URLs; no JSON-only catalogue.
+Each static page receives a unique title, description, canonical, OG and Twitter metadata. Standard WebPage and optional BreadcrumbList schema are used; **no invented listing Product/Offer schema** is emitted.
 
-Requirements: unique title/meta/OG/Twitter, per-domain absolute canonical, sitemap, robots, crawlable descriptive URL, internal links, breadcrumbs where relevant, no unnecessary schema markup. Placeholder domains and demo content stay `noindex` until an owner verifies the final domain and product facts.
+Sitemaps include the generated public routes. Demo pages are `noindex,nofollow` by default. The site URL and Astro base path are configured at build time.
 
-Search intent: Organic SEO + branded + social direct.
+No duplicate content from third-party reference sites is copied.

@@ -1,23 +1,39 @@
-# NORTHLINE Advisory · fictional brand
+# NORTHLINE Advisory — Website project
 
-**Build status:** Reference-led scaffold only.
+**Status:** Implemented portfolio demo. Fictional identity, sample prices, original concept imagery; no real clients, sales, inventory, returns or advisory licensing.
 
-**Business problem:** Qualify suitability before presenting illustrative options without promising future performance.
+## Business problem
+Help international buyers explore suitability, compare markets and understand illustrative rental income before requesting an introduction.
 
-**Target audience:** Cross-border buyers and investors comparing their goals and market choices
+## Target audience and traffic
+Cross-border property investors and second-home buyers; research-led traffic.
 
-**Traffic source:** Educational search / partnership referrals
+## Design references
+See [references.md](references.md) for 3 real information-architecture and 3 visual-design reference sites, referenced patterns and exclusions.
 
-**Design references:** see [`references.md`](./references.md), containing six real site references, explicit components and copying restrictions.
+## UX and CRO
+The design favours meaningful next actions, legible content, qualified enquiry forms and explicit sample disclosures over invented urgency or fake social proof.
 
-**UX/CRO decisions:** Show why each field matters; allow skip/back; show option selection after enough data; avoid coercive urgency.
+## Pages
+- `/`
+- `/privacy/`
 
-**Technical implementation:** Astro 5 + TypeScript + Tailwind 4 via Vite, CSS art direction unique to this app, static Cloudflare Pages output. Shared UI/SEO/forms/analytics packages. This app is reference-led scaffold only.
 
-**Analytics architecture:** quiz_complete, start_form, form_error, generate_lead and market/option view events. Preserved UTMs and GCLID for lead payload, no third-party vendor by default.
+## Functional implementation
+- Seven-step budget → objective → market → ready/off-plan → timeline → financing → contact quiz
+- Illustrative recommendations with explicit financial disclaimer
+- Reactive rental calculator: price, rent, charges, management, occupancy, gross and net yield
+- Optional configured HTTPS lead endpoint with consent and campaign attribution
 
-**AI/coding agent role:** source layout, initial copy, schema decisions, prototypes, and deterministic checks prepared with AI assistance; no claim of real sales or measured impact.
 
-**Demo/sample functionality:** Fictional brand, copy and all illustrative property/financial data. No real client work or actual inventory. This app is a scaffold, not a finished site. Its planned quiz/catalogue/funnel/microsite is NOT implemented.
+## Technology
+Astro static rendering, TypeScript and Tailwind CSS; JavaScript only for necessary form, filter or calculator interactivity. Shared SEO, analytics, structured data and form packages; GitHub Pages build with a path prefix.
 
-**Remaining gates:** dependency install, Astro typecheck/build, touch/keyboard audits, asset licensing review, security/CORS and live conversion checks, Lighthouse on production URL.
+## AI / coding assistance
+Code and design drafts were AI-assisted and refined against reference patterns. This is development-process documentation, **not** a claim about client delivery or results.
+
+## Still demonstration-only
+Lead forms do not transmit by default. A real integration requires an HTTPS API, server-side validation, consent records, rate limiting and privacy notice. All calculations, development facts and offers are illustrative.
+
+## QA
+See `accessibility.md` and `performance.md`; final browser and Lighthouse checks are recorded in repository QA reports rather than asserted from source code alone.

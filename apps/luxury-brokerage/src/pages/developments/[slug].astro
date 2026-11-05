@@ -1,0 +1,13 @@
+---
+import Layout from '@estate/ui/PortfolioLayout.astro';
+import {developments,type EstateDevelopment} from '../../data/inventory';
+import {nav} from '../../data/nav';
+import '../../styles/global.css';
+export function getStaticPaths(){return developments.map(item=>({params:{slug:item.slug},props:{item}}));}
+const {item}=Astro.props as {item:EstateDevelopment};const p=import.meta.env.BASE_URL;
+---
+<Layout title={`${item.name} | ATELIER Estates — Concept Development`} description={`${item.name} is a fictional architectural development concept, not a current property offering.`} brand="ATELIER / ESTATES" nav={nav(p)} accent="#242423">
+ <nav class="breadcrumbs container" aria-label="Breadcrumb"><a href={p}>Home</a><span>/</span><a href={`${p}developments/`}>Developments</a><span>/</span><span>{item.name}</span></nav>
+ <section class="page-heading container"><p class="eyebrow">{item.area.toUpperCase()} / CONCEPT DEVELOPMENT</p><h1>{item.name}<span class="period">.</span></h1><p>{item.headline}</p></section><div class="container full-image"><img src={`${p}assets/${item.image}`} alt={`Original illustration for hypothetical development ${item.name}`} width="1200" height="850" fetchpriority="high" /></div>
+ <section class="container detail-body"><article><p class="eyebrow">THE CONCEPT</p><h2>Imagined around living.</h2><p>{item.description}</p><p>Explore sample residences and enquire to see how a project-led website experience can support buyer qualification.</p><a class="solid-button" href={`${p}contact/?development=${item.slug}#enquire`}>Register interest in this demo ↗</a></article><aside class="specification"><p class="eyebrow">PROJECT FACTS / ILLUSTRATIVE</p><dl><div><dt>Location</dt><dd>{item.area}</dd></div><div><dt>Residences</dt><dd>{item.residences}</dd></div><div><dt>Handover</dt><dd>{item.handover}</dd></div><div><dt>Status</dt><dd>Fictional project</dd></div></dl><a href={`${p}developments/`}>← All developments</a></aside></section>
+</Layout>

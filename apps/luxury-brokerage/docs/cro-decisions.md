@@ -1,11 +1,10 @@
-# CRO decisions
+# CRO decisions — ATELIER Estates
 
-**Business problem.** Expose inventory, areas and developments through crawlable detail pages and usable filters.
+Business objective: Show how a premium brokerage can organize discovery across properties, neighbourhoods and new developments with real crawlable static URLs.
 
-**Primary conversion.** specific property enquiry and seller introduction.
+- Six fictional property profiles with price, beds, area, type, status and property detail pages
+- Filter by area, property type, minimum bedrooms, price ceiling and delivery status
+- Two fictional developments, three editorial areas, buying, selling, about, insights, contact
+- Configurable enquiry form with consent and anti-spam honeypot
 
-**Design hypotheses.** Filters and contextual enquiry, low-noise browsing, relevant area/internal links.
-
-**Trust constraints.** Do not fabricate past successes, counts of buyers, transaction rates, reviews, developer credentials, returns or agency licenses. Demo forms must announce whether sending is active. No fake scarcity banners, countdowns or popups.
-
-**Measurement gate.** Use live qualified conversion counts only after connecting a permitted CRM endpoint and gaining consent. No fictitious conversion uplift.
+Avoid false scarcity, fake performance claims and invented trust statistics.

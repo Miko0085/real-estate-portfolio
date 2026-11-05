@@ -5,10 +5,10 @@ Five independent real-estate website projects.
 | Project | Preview | Status |
 | --- | --- | --- |
 | Dubai Off-Plan | [Open](https://miko0085.github.io/real-estate-portfolio/dubai-offplan/) | Interactive demo |
-| Investor Advisory | [Open](https://miko0085.github.io/real-estate-portfolio/investor-advisory/) | Concept preview |
-| Luxury Brokerage | [Open](https://miko0085.github.io/real-estate-portfolio/luxury-brokerage/) | Concept preview |
-| Seller Lead Generation | [Open](https://miko0085.github.io/real-estate-portfolio/seller-leads/) | Concept preview |
-| Developer Project | [Open](https://miko0085.github.io/real-estate-portfolio/developer-project/) | Concept preview |
+| Investor Advisory | [Open](https://miko0085.github.io/real-estate-portfolio/investor-advisory/) | Interactive demo |
+| Luxury Brokerage | [Open](https://miko0085.github.io/real-estate-portfolio/luxury-brokerage/) | Interactive demo |
+| Seller Lead Generation | [Open](https://miko0085.github.io/real-estate-portfolio/seller-leads/) | Interactive demo |
+| Developer Project | [Open](https://miko0085.github.io/real-estate-portfolio/developer-project/) | Interactive demo |
 
 **[View the portfolio](https://miko0085.github.io/real-estate-portfolio/)**
 

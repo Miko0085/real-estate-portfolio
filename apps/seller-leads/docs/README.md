@@ -1,23 +1,39 @@
-# FIELDNOTE Property · fictional brand
+# FIELDNOTE Property — Website project
 
-**Build status:** Reference-led scaffold only.
+**Status:** Implemented portfolio demo. Fictional identity, sample prices, original concept imagery; no real clients, sales, inventory, returns or advisory licensing.
 
-**Business problem:** Turn seller valuation interest into a qualified, consented consultation request.
+## Business problem
+Collect context required for a seller valuation review while explaining that a valuation is never automatically produced.
 
-**Target audience:** Dubai property owners considering a sale
+## Target audience and traffic
+Property owners researching a future sale; valuation-focused search and paid social.
 
-**Traffic source:** High-intent Search / remarketing / referrals
+## Design references
+See [references.md](references.md) for 3 real information-architecture and 3 visual-design reference sites, referenced patterns and exclusions.
 
-**Design references:** see [`references.md`](./references.md), containing six real site references, explicit components and copying restrictions.
+## UX and CRO
+The design favours meaningful next actions, legible content, qualified enquiry forms and explicit sample disclosures over invented urgency or fake social proof.
 
-**UX/CRO decisions:** CTA anchored to progressive form; explain next step, avoid claiming instant market value without validated comparables.
+## Pages
+- `/`
+- `/privacy/`
 
-**Technical implementation:** Astro 5 + TypeScript + Tailwind 4 via Vite, CSS art direction unique to this app, static Cloudflare Pages output. Shared UI/SEO/forms/analytics packages. This app is reference-led scaffold only.
 
-**Analytics architecture:** start_form, form_error, generate_lead, conversion-step and CTA events. Preserved UTMs and GCLID for lead payload, no third-party vendor by default.
+## Functional implementation
+- Three-step seller form: property details → occupancy/value/timeline → contact/consent
+- Accessible field validation with back/continue, progress and local-only demo status
+- Seller process, marketing approach, qualitative market insight examples and FAQs
+- Optional configured HTTPS webhook and attribution capture
 
-**AI/coding agent role:** source layout, initial copy, schema decisions, prototypes, and deterministic checks prepared with AI assistance; no claim of real sales or measured impact.
 
-**Demo/sample functionality:** Fictional brand, copy and all illustrative property/financial data. No real client work or actual inventory. This app is a scaffold, not a finished site. Its planned quiz/catalogue/funnel/microsite is NOT implemented.
+## Technology
+Astro static rendering, TypeScript and Tailwind CSS; JavaScript only for necessary form, filter or calculator interactivity. Shared SEO, analytics, structured data and form packages; GitHub Pages build with a path prefix.
 
-**Remaining gates:** dependency install, Astro typecheck/build, touch/keyboard audits, asset licensing review, security/CORS and live conversion checks, Lighthouse on production URL.
+## AI / coding assistance
+Code and design drafts were AI-assisted and refined against reference patterns. This is development-process documentation, **not** a claim about client delivery or results.
+
+## Still demonstration-only
+Lead forms do not transmit by default. A real integration requires an HTTPS API, server-side validation, consent records, rate limiting and privacy notice. All calculations, development facts and offers are illustrative.
+
+## QA
+See `accessibility.md` and `performance.md`; final browser and Lighthouse checks are recorded in repository QA reports rather than asserted from source code alone.

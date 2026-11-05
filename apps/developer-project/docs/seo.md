@@ -1,7 +1,7 @@
-# SEO
+# SEO — SERA / COAST
 
-Project and unit pages using verified/factual structured data only; avoid promises of handover and guaranteed yields.
+Each static page receives a unique title, description, canonical, OG and Twitter metadata. Standard WebPage and optional BreadcrumbList schema are used; **no invented listing Product/Offer schema** is emitted.
 
-Requirements: unique title/meta/OG/Twitter, per-domain absolute canonical, sitemap, robots, crawlable descriptive URL, internal links, breadcrumbs where relevant, no unnecessary schema markup. Placeholder domains and demo content stay `noindex` until an owner verifies the final domain and product facts.
+Sitemaps include the generated public routes. Demo pages are `noindex,nofollow` by default. The site URL and Astro base path are configured at build time.
 
-Search intent: Project-branded search, social, broker referrals.
+No duplicate content from third-party reference sites is copied.

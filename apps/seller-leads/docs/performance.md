@@ -1,5 +1,7 @@
-# Performance
+# Performance — FIELDNOTE Property
 
-Targets only (not measured): p75 field LCP <=2.5 s, INP <=200 ms, CLS <=0.1. Keep hero static and form progressive, do not preload hidden steps.
+Targets (field data, not guarantees): LCP <= 2.5s, INP <= 200ms, CLS <= .1.
 
-Benchmark after actual build on real hosting using Lighthouse mobile and field data, record date/device URL and values; do not invent reports. Image asset licensing and actual browser image delivery require final review. Default no analytics vendor JS.
+Astro static output; local SVG illustrations; lazy-loading below-the-fold images; explicit dimensions; no autoplay videos or external image/CDN runtime dependency. Core site navigation does not require hydration. Small TypeScript scripts progressively enhance forms, filters or calculations.
+
+Test on mobile connections using Lighthouse/PageSpeed Insights after deployment and capture measurements before making performance claims.

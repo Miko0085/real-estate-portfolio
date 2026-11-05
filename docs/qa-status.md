@@ -1,28 +1,18 @@
-# QA log — phase 1
+# Portfolio QA status — 2026-11-05
 
-**Truthful status:** Implementation source is provided; production QA requires package installation and a successful Astro build and deployed runtime checks. Do not interpret structure checks as proof of LCP, INP, CLS, Lighthouse or WCAG compliance.
+## Completed locally before GitHub publication
 
-## Automated gates
+- Four additional Astro applications implemented with distinct design systems, content, accessible form flows and demo disclosures.
+- Shared layout, form submission abstraction, campaign attribution and financial calculator module added.
+- 17 unit/source tests pass; TypeScript source checking passes; source structure audit passes.
+- PDF sample brochure rendered and visually inspected.
 
-- Source audit: `npm run audit:static`
-- Shared TypeScript semantics (can run with global TypeScript): `npm run check:source`
-- Type/Astro components: `npm install && npm run check:offplan`
-- Build: `npm run build:offplan`
-- Unit: `npm test`
-- Browser: `BASE_URL=http://localhost:4321 python scripts/browser-qa.py` (requires local Playwright and Chromium)
-- Lighthouse: `npx lighthouse http://localhost:4321/ --chrome-flags='--headless --no-sandbox' --output html --output-path lighthouse.html` (requires dependency + Chrome and internet for first install)
-- axe: run axe DevTools or `@axe-core/playwright` against 320/375/430/768/1024/1440 px, review manually.
+## Outstanding release validation
 
-## Manual blocking checklist
+- Run Astro and TypeScript check plus build for all apps in GitHub Actions (npm registry unavailable in local environment).
+- Validate generated routes, images, canonical URLs and links from the GitHub Actions build artifact.
+- Run Chromium at 320, 375, 430, 768, 1024 and 1440 px; check overflow and interactive flows.
+- Lighthouse and screen-reader verification are separate acceptance gates; no metrics claimed without measurements.
+- GitHub Pages cannot process POST submissions; external HTTPS lead endpoint is deliberately not configured.
 
-- 320 / 375 / 430 / 768 / 1024 / 1440 px: no overflow; usable header, forms, CTAs, tap targets
-- Keyboard-only: skip link, menus, form errors, focus order, details and links
-- Reduced-motion simulation, contrast audit and screen-reader labels
-- Lighthouse mobile + desktop: LCP <=2.5s, INP <=200ms, CLS <=0.1 as **targets**, not measured results
-- Validate all metadata against real domain; robots/sitemap on production only
-- Security: enforce CSP and HSTS only on domains using HTTPS; test real endpoint CORS and rate limits
-- Lead lifecycle: consent/no-consent, invalid inputs, disconnected, 4xx, 5xx, timeouts, slow requests, double submits, honeypot, UTM capture
-- Human review of fictional branding and image licensing before live publication
-
-
-See `apps/dubai-offplan/docs/qa-report.md` for the actual executed checks and known release blockers.
+All inventory, prices, market scenarios, people, businesses and architectural imagery in these four apps are fictional examples.
