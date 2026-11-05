@@ -27,4 +27,4 @@ for (const slug of projects) {
 }
 if (!portfolio.includes('styles.css')) throw new Error('Portfolio stylesheet not linked');
 if (!existsSync(join(out, 'dubai-offplan', 'assets', 'coastal-residence.svg'))) throw new Error('Dubai Off-Plan preview image is missing');
-console.log('GitHub Pages build: LEGION-styled portfolio plus five real-estate applications.');
+console.log('GitHub Pages build: real-estate website portfolio plus five real-estate applications.');
