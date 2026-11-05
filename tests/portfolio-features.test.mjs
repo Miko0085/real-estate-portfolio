@@ -19,7 +19,8 @@ test('all four upgraded applications have real UI and privacy pages',()=>{
     const html=read(path+'index.astro');
     assert.ok(!html.includes('NOT LAUNCHED') && !html.includes('IMPLEMENTATION PENDING'));
     assert.ok(existsSync(join(root,path+'privacy/index.astro')));
-    assert.ok(existsSync(join(root,`apps/${site}/public/favicon.svg`)));\n    if(site==='investor-advisory') for(const market of ['dubai','lisbon','london']) assert.ok(existsSync(join(root,`apps/${site}/public/assets/market-${market}.svg`)));
+    assert.ok(existsSync(join(root,`apps/${site}/public/favicon.svg`)));
+    if(site==='investor-advisory') for(const market of ['dubai','lisbon','london']) assert.ok(existsSync(join(root,`apps/${site}/public/assets/market-${market}.svg`)));
   }
 });
 test('investor brief and rental model have inputs and conditional options',()=>{
