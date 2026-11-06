@@ -253,3 +253,7 @@ a{color:inherit}button{cursor:pointer}
  .nl-calculator-card{padding:22px 15px}
 }
 @media(prefers-reduced-motion:reduce){.nl-progress-track>span{transition:none}}
+/* V4.2 mobile QA: constrain dynamic recommendation cards inside the quiz grid. */
+.nl-results-grid{grid-template-columns:minmax(0,1fr)}
+.nl-result-card{min-width:0;overflow-wrap:anywhere}
+.nl-result-copy{min-width:0}
