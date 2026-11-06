@@ -92,3 +92,8 @@ body{background:var(--paper);color:var(--ink);font-family:"Trebuchet MS",Arial,s
   .hero-actions{gap:18px}
   .hero-note{font-size:11px}
 }
+
+/* 320px / hero compositing corrective rules (v3 QA). */
+.hero.container .hero-photo{z-index:0}
+.hero.container .hero-text{z-index:2}
+@media(max-width:600px){.nav-shell{gap:8px}.brand{font-size:14px;letter-spacing:.045em}.mobile-nav{flex:none}}

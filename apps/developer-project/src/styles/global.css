@@ -73,3 +73,16 @@ body{background:var(--paper);color:var(--ink);font-family:"Helvetica Neue",Arial
  .nav-shell{min-height:76px}
  .concept-film-section{padding-inline:18px}
 }
+
+/* Mobile navigation must not hide behind the wrapped demo notice. */
+@media(max-width:760px){
+ .site-header{position:relative;top:auto;left:auto;width:100%;z-index:30;background:#272321;color:#fff;border-color:#6f6258}
+ .site-header .brand{font-size:20px;letter-spacing:.13em}
+ .nav-shell{gap:8px}
+ .hero-copy{padding-top:118px}
+}
+@media(max-width:360px){
+ .site-header .brand{font-size:18px;letter-spacing:.09em}
+ .nav-shell{gap:7px}
+ .mobile-nav{flex:none}
+}
