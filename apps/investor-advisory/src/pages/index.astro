@@ -1,41 +1,147 @@
 ---
 import Layout from '@estate/ui/PortfolioLayout.astro';
 import '../styles/global.css';
-const p=import.meta.env.BASE_URL;
-const nav=[{label:'Markets',href:'#markets'},{label:'Approach',href:'#approach'},{label:'Calculator',href:'#calculator'},{label:'Find your fit',href:'#qualification'}];
-const markets=[
-{label:'01 / THE EMIRATES',name:'Dubai',copy:'A diverse mix of ready residences and new development concepts.',tag:'Income + lifestyle',image:'market-dubai.webp'},
-{label:'02 / SOUTHERN EUROPE',name:'Lisbon',copy:'A mature urban landscape with local rules and distinct ownership costs.',tag:'Long-term perspective',image:'market-lisbon.webp'},
-{label:'03 / THE UK',name:'London',copy:'Established international demand, high acquisition costs and multiple submarkets.',tag:'Capital preservation focus',image:'market-london.webp'}];
-const sampleScenes=[
-{name:'Coastal residence concept',market:'Dubai · illustrative',image:'opportunity-coast.webp',description:'An imagined waterfront home demonstrating the visual presentation of a private residence.'},
-{name:'Garden living concept',market:'International · illustrative',image:'opportunity-garden.webp',description:'A fictional landscaped home showing an alternative residential lifestyle.'},
-{name:'Modern architecture concept',market:'International · illustrative',image:'opportunity-city.webp',description:'A sample architectural study for buyers who prioritize contemporary design.'}
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const asset = (file: string) => `${base}${file.replace(/^\/+/, '')}`;
+const nav = [
+  {label:'Destinations',href:'#destinations'},
+  {label:'The collection',href:'#collection'},
+  {label:'Investor brief',href:'#qualification'},
+  {label:'Yield calculator',href:'#calculator'}
 ];
-const endpoint=import.meta.env.PUBLIC_LEAD_ENDPOINT || '';
+const destinations = [
+  {number:'01', name:'Dubai', region:'THE EMIRATES', image:'market-dubai.webp', alt:'Conceptual contemporary waterfront residence illustrating the Dubai market, not an actual listing', copy:'Modern coastal homes, diverse ownership structures and a fast-moving development landscape.', question:'Consider ownership costs and ready versus off-plan delivery.'},
+  {number:'02', name:'Lisbon', region:'PORTUGAL', image:'market-lisbon.webp', alt:'Fictional Mediterranean-style residence used as an editorial illustration for Lisbon', copy:'Historic neighbourhoods, evolving housing stock and careful local due diligence.', question:'Consider transaction costs, property condition and regulatory rules.'},
+  {number:'03', name:'London', region:'THE UNITED KINGDOM', image:'market-london.webp', alt:'Fictional urban residence used as a conceptual illustration of the London market', copy:'An established metropolitan market with substantial variation between locations and budgets.', question:'Consider taxes, ongoing charges and financing conditions.'}
+];
+const stories = [
+  {number:'01 / WATER',title:'The coastal perspective',region:'DUBAI',image:'opportunity-coast.webp',alt:'Fictional concept image of a waterfront residence; not an actual Dubai listing',detail:'For buyers thinking about a home that balances personal use and long-term flexibility.'},
+  {number:'02 / GARDEN',title:'The slower address',region:'LISBON',image:'opportunity-garden.webp',alt:'Fictional concept garden property; not an actual Lisbon listing',detail:'A useful starting point for understanding upkeep, neighbourhood character and ownership costs.'},
+  {number:'03 / CITY',title:'The urban collection',region:'LONDON',image:'opportunity-city.webp',alt:'Fictional modern residential concept image; not an actual London listing',detail:'A different conversation: city access, service charges, liquidity and entry budget.'}
+];
+const endpoint=String(import.meta.env.PUBLIC_LEAD_ENDPOINT || '').trim();
 ---
-<Layout title="NORTHLINE Advisory | International Property Investment — Demo" description="Illustrative international property advisory website with suitability quiz and net yield calculator. Fictional business and examples." brand="NORTHLINE / ADVISORY" nav={nav} accent="#101d31">
-<section class="hero container">
- <div class="hero-text"><p class="eyebrow">INTERNATIONAL REAL ESTATE / DEMO</p><h1>Explore more. <em>Imagine beyond.</em></h1><p class="hero-lead">Discover distinct places and the kinds of homes that define them. Compare investment considerations without losing sight of the lifestyle behind each decision.</p><div class="hero-actions"><a class="button" href="#qualification">Build your brief <span aria-hidden="true">↗</span></a><a class="text-button" href="#calculator">Explore the numbers <span aria-hidden="true">→</span></a></div><p class="hero-note">This is a fictional advisory concept. Nothing shown is financial advice or an offer.</p></div>
- <figure class="hero-photo"><img src={`${p}assets/advisory-residence.webp`} alt="Original AI-generated fictional coastal residence and skyline at sunset; not a real property listing" width="1380" height="777" fetchpriority="high" loading="eager" decoding="async"/><figcaption><span>ARCHITECTURAL CONCEPT</span><span>ILLUSTRATIVE / NOT A REAL PROPERTY</span></figcaption></figure>
-</section>
-<section class="market-section" id="markets"><div class="container"><div class="section-heading"><p class="eyebrow">01 / PLACES TO EXPLORE</p><h2>Different places. <em>Different considerations.</em></h2><p>Every market has different taxes, ownership rules, liquidity and recurring costs. These cards are illustrative, not recommendations.</p></div><div class="market-grid">{markets.map(m=><article class="market-card"><img src={`${p}assets/${m.image}`} alt={`Original AI-generated architectural visualization representing the ${m.name} concept market; no actual listing`} width="836" height="470" loading="lazy"/><div class="market-copy"><span class="eyebrow">{m.label}</span><h3>{m.name}</h3><p>{m.copy}</p><span class="market-tag">{m.tag}</span></div></article>)}</div></div></section>
-<section class="opportunities-section container" id="opportunities" aria-labelledby="opportunities-heading">
-  <div class="section-heading"><p class="eyebrow">02 / AN EDITORIAL COLLECTION</p><h2 id="opportunities-heading">Homes that tell <em>different stories.</em></h2><p>Three original visual studies illustrating residential styles. These are not available properties or verified investment recommendations.</p></div>
-  <div class="opportunities-grid">{sampleScenes.map((item)=><article class="opportunity-photo-card"><img src={`${p}assets/${item.image}`} alt={`AI-generated fictional architecture study: ${item.name}; not real property inventory`} width="1600" height="900" loading="lazy" decoding="async"/><div class="opportunity-photo-copy"><span>{item.market}</span><h3>{item.name}</h3><p>{item.description}</p></div></article>)}</div>
-</section>
-<section id="approach" class="logic-section container"><div class="section-heading"><p class="eyebrow">03 / THE APPROACH</p><h2>Start with the objective,<br><em>not a property.</em></h2></div><div class="logic-grid"><article><b>01</b><h3>Define the role of capital</h3><p>Income, long-term appreciation, personal use or a mix. Different goals call for different criteria.</p></article><article><b>02</b><h3>Stress-test the economics</h3><p>Allow for vacancy, ongoing costs, financing, transaction fees, and currency exposure.</p></article><article><b>03</b><h3>Make trade-offs explicit</h3><p>Compare readiness, geography, time horizon and liquidity rather than relying on headline yields.</p></article></div></section>
-<section id="calculator" class="calculator-section"><div class="container calculator-layout"><div class="calculator-copy"><p class="eyebrow">04 / INVESTMENT CALCULATOR</p><h2>What is left <em>after costs?</em></h2><p>Adjust the assumptions to see how occupancy and ongoing expenses change an illustrative income-based yield.</p><p class="callout">This model excludes purchase taxes, financing, capital gains, appreciation, exit costs and currency changes. No return is guaranteed.</p></div><div class="calculator-card"><div class="card-head"><strong>Rental scenario</strong><span>Illustrative only</span></div><div class="calc-input-grid"><label>Purchase price (USD)<input type="number" min="1" max="1000000000" step="1000" value="450000" data-calc="price"/></label><label>Annual gross rent (USD)<input type="number" min="0" max="1000000000" step="500" value="31500" data-calc="rent"/></label><label>Annual service charges (USD)<input type="number" min="0" max="100000000" step="100" value="3600" data-calc="service"/></label><label>Annual management costs (USD)<input type="number" min="0" max="100000000" step="100" value="2400" data-calc="management"/></label><label class="wide">Annual occupancy: <output id="occupancy-value">90%</output><input type="range" min="0" max="100" step="5" value="90" data-calc="occupancy" /></label></div><div class="calc-results" aria-live="polite"><div><span>Gross yield</span><strong id="gross-yield">7.0%</strong></div><div><span>Estimated net yield</span><strong id="net-yield">4.97%</strong></div><div><span>Estimated net income / year</span><strong id="net-income">$22,350</strong></div></div><p class="fine">Annual net income = rental income × occupancy − service charges − management costs. Net yield = annual net income ÷ purchase price.</p></div></div></section>
-<section id="qualification" class="quiz-section container"><div class="section-heading"><p class="eyebrow">05 / INVESTOR BRIEF</p><h2>Find the questions worth <em>asking next.</em></h2><p>Seven simple steps produce an illustrative shortlist from fictional example opportunities. No matching algorithm guarantees suitability.</p></div><div class="quiz-shell" data-quiz><div class="quiz-sidebar"><p class="eyebrow">YOUR BRIEF</p><div class="progress-label"><span>STEP <strong data-progress-label>01 / 07</strong></span><span data-percent>14%</span></div><div class="progress-track"><span data-progress-bar style="width:14%"></span></div><p>Private by default. Your answers stay in the browser unless you explicitly send an enquiry to a configured operator.</p><div class="quiz-steps">Budget <span>→</span> Goal <span>→</span> Market <span>→</span> Delivery <span>→</span> Timeline <span>→</span> Financing <span>→</span> Contact</div></div><div class="quiz-main"><form id="investor-enquiry" data-capture-form data-endpoint={endpoint} method="post" action={`${p}api/lead`}><div class="honeypot" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"/></label></div>
-  <fieldset data-quiz-step="0"><legend>What budget range are you considering?</legend><p class="step-sub">All figures in USD for illustrative comparison.</p><div class="options">{[['under-300k','Under $300,000'],['300-600k','$300,000–$600,000'],['600k-1m','$600,000–$1 million'],['over-1m','Above $1 million']].map(([v,l])=><label><input type="radio" name="budget" value={v}/><span>{l}</span></label>)}</div></fieldset>
-  <fieldset data-quiz-step="1" hidden><legend>What is your primary investment objective?</legend><div class="options">{[['income','Rental income'],['growth','Long-term appreciation'],['diversify','Portfolio diversification'],['personal','Personal use and flexibility']].map(([v,l])=><label><input type="radio" name="objective" value={v}/><span>{l}</span></label>)}</div></fieldset>
-  <fieldset data-quiz-step="2" hidden><legend>Which market is on your radar?</legend><div class="options">{[['dubai','Dubai'],['lisbon','Lisbon'],['london','London'],['open','I am open to markets']].map(([v,l])=><label><input type="radio" name="market" value={v}/><span>{l}</span></label>)}</div></fieldset>
-  <fieldset data-quiz-step="3" hidden><legend>What delivery status do you prefer?</legend><div class="options">{[['ready','Ready / resale'],['offplan','Under construction'],['both','Open to both']].map(([v,l])=><label><input type="radio" name="status" value={v}/><span>{l}</span></label>)}</div></fieldset>
-  <fieldset data-quiz-step="4" hidden><legend>When might you make a decision?</legend><div class="options">{[['now','Within 3 months'],['soon','3–12 months'],['later','Over 12 months'],['research','Only researching']].map(([v,l])=><label><input type="radio" name="timeline" value={v}/><span>{l}</span></label>)}</div></fieldset>
-  <fieldset data-quiz-step="5" hidden><legend>How would you fund the purchase?</legend><div class="options">{[['cash','Cash'],['loan','Financing'],['mixed','Cash + financing'],['unknown','Undecided']].map(([v,l])=><label><input type="radio" name="financing" value={v}/><span>{l}</span></label>)}</div></fieldset>
-  <fieldset data-quiz-step="6" hidden><legend>Your example shortlist is almost ready.</legend><p class="step-sub">Contact details are optional for viewing results, but required to send an enquiry.</p><div class="contact-grid"><label>Name <input type="text" name="name" autocomplete="name" minlength="2" required placeholder="Your name"/></label><label>Email <input type="email" name="email" autocomplete="email" required placeholder="you@example.com"/></label><label>Phone (optional) <input type="tel" name="phone" autocomplete="tel" placeholder="+1 555 000 0000"/></label></div><label class="consent"><input type="checkbox" name="consent"/> <span>I agree to be contacted if I submit this enquiry. <a href={`${p}privacy/`}>Privacy notice</a>.</span></label></fieldset>
-  <div class="quiz-error" role="alert" aria-live="polite" data-quiz-error></div><div class="quiz-controls"><button type="button" class="back" data-back hidden>← Back</button><button type="button" class="next" data-next>Continue <span aria-hidden="true">→</span></button></div>
-  <div data-quiz-results hidden class="quiz-results" aria-live="polite"><p class="eyebrow">YOUR EXAMPLE OPTIONS</p><h3>Three directions to explore</h3><p data-brief-summary></p><div data-example-options></div><p class="fine">Examples are hypothetical and not property listings, offers or investment advice.</p><button type="submit" class="button submit-button">Send an enquiry (demo) <span aria-hidden="true">↗</span></button><p data-feedback role="status" aria-live="polite"></p></div>
- </form></div></div></section>
+<Layout
+ title="NORTHLINE | International Property Advisory Demo & Investor Brief"
+ description="Explore three illustrative real-estate markets, build a seven-step investor brief, view sample property scenarios and calculate estimated rental yield after occupancy and costs. Fictional concept."
+ brand="NORTHLINE / PROPERTY JOURNAL"
+ nav={nav}
+ accent="#173640"
+ image="og-cover.svg"
+ footerNote="NORTHLINE is a fictional international property journal and advisory interface. All example homes, budgets and calculations are illustrative"
+>
+  <section class="nl-hero" aria-labelledby="nl-hero-title">
+    <div class="nl-hero-copy">
+      <div class="nl-hero-overline"><span>VOL. 01 / INTERNATIONAL PROPERTY</span><span>DEMO · 2026</span></div>
+      <div class="nl-hero-body">
+        <p class="nl-kicker">A PERSONAL WAY TO EXPLORE REAL ESTATE</p>
+        <h1 id="nl-hero-title">Find your <em>place</em> in the world.</h1>
+        <p class="nl-lead">Explore three destinations through the homes, ownership questions and financial trade-offs that make each one different.</p>
+        <div class="nl-hero-actions">
+          <a href="#qualification" class="nl-primary-link" data-track="start_form">Build your property brief <span aria-hidden="true">↗</span></a>
+          <a href="#destinations" class="nl-underlined-link">Discover destinations ↓</a>
+        </div>
+      </div>
+      <div class="nl-hero-foot"><span>EXPLORATION BEFORE RECOMMENDATION</span><span>ALL HOMES & FIGURES ARE SAMPLE CONTENT</span></div>
+    </div>
+    <figure class="nl-hero-image">
+      <img src={asset('assets/advisory-residence.webp')} alt="Original fictional coastal property visualization used as an editorial illustration, not an available home" width="1380" height="777" fetchpriority="high" decoding="async"/>
+      <figcaption>CONCEPT RESIDENCE / NOT REAL PROPERTY INVENTORY</figcaption>
+    </figure>
+  </section>
+
+  <section id="destinations" class="nl-section nl-destinations" aria-labelledby="nl-destinations-title">
+    <div class="container">
+      <div class="nl-section-top"><span>01 / PLACES</span><span>THREE MARKETS, THREE DIFFERENT QUESTIONS</span></div>
+      <div class="nl-title-row"><h2 id="nl-destinations-title">First, consider <em>the setting.</em></h2><p>International property is never one market. The approach changes with ownership rules, transaction costs and the role a home will play in your life.</p></div>
+      <div class="nl-destinations-grid">
+        {destinations.map((d)=><article class="nl-destination">
+          <div class="nl-destination-image"><img src={asset(`assets/${d.image}`)} width="836" height="470" loading="lazy" decoding="async" alt={d.alt}/><span>{d.number} / {d.region}</span></div>
+          <div class="nl-destination-copy"><h3>{d.name}</h3><p>{d.copy}</p><p class="nl-destination-hint">{d.question}</p><a href="#qualification" data-prefill-market={d.name.toLowerCase()} class="nl-inline-link">Explore {d.name} in your brief <span aria-hidden="true">↗</span></a></div>
+        </article>)}
+      </div>
+      <p class="nl-disclosure">These destination images are fictional architectural studies, not photographs of available listings or verified geographic sites.</p>
+    </div>
+  </section>
+
+  <section id="collection" class="nl-section nl-collection" aria-labelledby="nl-collection-title">
+    <div class="container">
+      <div class="nl-section-top"><span>02 / THE COLLECTION</span><span>ILLUSTRATIVE HOMES, NOT OFFERS</span></div>
+      <div class="nl-title-row"><h2 id="nl-collection-title">Three ways to <em>look at property.</em></h2><p>We use illustrative concepts to demonstrate how a destination, a purchase objective and a property's role can shape a more focused search.</p></div>
+      <div class="nl-story-grid">
+        {stories.map((story)=><article class="nl-story">
+          <div class="nl-story-image"><img src={asset(`assets/${story.image}`)} width="1600" height="900" loading="lazy" decoding="async" alt={story.alt}/></div>
+          <div class="nl-story-body"><div class="nl-story-meta"><span>{story.number}</span><span>{story.region} / CONCEPT</span></div><h3>{story.title}</h3><p>{story.detail}</p><span class="nl-small-print">ORIGINAL FICTIONAL STUDY</span></div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" class="nl-section nl-approach" aria-labelledby="nl-approach-title">
+    <div class="container">
+      <div class="nl-section-top"><span>03 / OUR THINKING</span><span>START WITH THE QUESTIONS</span></div>
+      <div class="nl-approach-grid">
+        <div><p class="nl-kicker">THE RIGHT ORDER</p><h2 id="nl-approach-title">The property comes <em>after the brief.</em></h2><p>A disciplined approach to international home selection starts with your goals, constraints and the costs beyond the headline price.</p><a href="#qualification" class="nl-underlined-link">Create your brief ↗</a></div>
+        <div class="nl-approach-steps">
+          <article><span>01</span><div><h3>Define its purpose</h3><p>Rental income, lifestyle, diversification or a combination of priorities.</p></div></article>
+          <article><span>02</span><div><h3>Consider the full cost</h3><p>Purchase expenses, ongoing charges, management and vacancy affect comparisons.</p></div></article>
+          <article><span>03</span><div><h3>Understand the trade-offs</h3><p>Liquidity, readiness, geography and time horizon rarely align perfectly.</p></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="qualification" class="nl-section nl-brief" aria-labelledby="nl-brief-title">
+    <div class="container">
+      <div class="nl-section-top"><span>04 / PROPERTY BRIEF</span><span>SEVEN QUESTIONS · EXAMPLE RESULTS</span></div>
+      <div class="nl-title-row"><h2 id="nl-brief-title">A clearer brief. <em>A better starting point.</em></h2><p>Answer six preference questions, then optionally share contact details. Your fictional shortlist appears without requiring you to submit anything.</p></div>
+      <div class="nl-quiz" data-quiz data-assets={asset('assets/')}>
+        <aside class="nl-quiz-side">
+          <p class="nl-kicker">NORTHLINE / YOUR BRIEF</p>
+          <div class="nl-progress-label"><span>STEP <strong data-progress-label>01 / 07</strong></span><span data-percent>14%</span></div>
+          <div class="nl-progress-track" role="progressbar" aria-label="Investor brief progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="14" data-progress-track><span data-progress-bar style="width:14%"></span></div>
+          <p class="nl-quiz-private">Your answers remain in this browser unless you explicitly submit the optional contact form through a configured secure endpoint.</p>
+          <div class="nl-quiz-guide"><span>YOUR ROUTE</span><p>Budget / Objective / Market / Property stage / Timeline / Financing / Contact</p></div>
+        </aside>
+        <div class="nl-quiz-main">
+          <form id="investor-enquiry" data-capture-form data-endpoint={endpoint} method="post" action={`${base}api/lead`}>
+            <div class="honeypot" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"/></label></div>
+            <fieldset data-quiz-step="0"><legend tabindex="-1">What budget range feels realistic?</legend><p class="nl-step-sub">Figures are in USD for a comparable illustrative planning scenario.</p><div class="nl-options">{[['under-300k','Under $300,000'],['300-600k','$300,000–$600,000'],['600k-1m','$600,000–$1 million'],['over-1m','Above $1 million']].map(([v,l])=><label><input type="radio" name="budget" value={v}/><span>{l}</span></label>)}</div></fieldset>
+            <fieldset data-quiz-step="1" hidden><legend tabindex="-1">What should this property do for you?</legend><div class="nl-options">{[['income','Provide rental income'],['growth','Build long-term value'],['diversify','Diversify my property exposure'],['personal','Support personal use and lifestyle']].map(([v,l])=><label><input type="radio" name="objective" value={v}/><span>{l}</span></label>)}</div></fieldset>
+            <fieldset data-quiz-step="2" hidden><legend tabindex="-1">Which destination interests you?</legend><div class="nl-options">{[['dubai','Dubai'],['lisbon','Lisbon'],['london','London'],['open','Open to several markets']].map(([v,l])=><label><input type="radio" name="market" value={v}/><span>{l}</span></label>)}</div></fieldset>
+            <fieldset data-quiz-step="3" hidden><legend tabindex="-1">What property stage do you prefer?</legend><div class="nl-options">{[['ready','Ready / resale'],['offplan','New-build / off-plan'],['both','Open to either']].map(([v,l])=><label><input type="radio" name="status" value={v}/><span>{l}</span></label>)}</div></fieldset>
+            <fieldset data-quiz-step="4" hidden><legend tabindex="-1">When might you make a decision?</legend><div class="nl-options">{[['now','Within 3 months'],['soon','3–12 months'],['later','Over 12 months'],['research','Research stage only']].map(([v,l])=><label><input type="radio" name="timeline" value={v}/><span>{l}</span></label>)}</div></fieldset>
+            <fieldset data-quiz-step="5" hidden><legend tabindex="-1">How would you approach financing?</legend><div class="nl-options">{[['cash','Cash'],['loan','Mortgage / financing'],['mixed','A mixture of cash and finance'],['unknown','Undecided']].map(([v,l])=><label><input type="radio" name="financing" value={v}/><span>{l}</span></label>)}</div></fieldset>
+            <fieldset data-quiz-step="6" hidden><legend tabindex="-1">Would you like to stay in touch?</legend><p class="nl-step-sub">You can see the example options without providing contact details. Name, email and consent are only required to send an enquiry.</p><div class="nl-contact-grid"><label>Name <input type="text" name="name" autocomplete="name" minlength="2" required placeholder="Your name"/></label><label>Email <input type="email" name="email" autocomplete="email" required placeholder="you@example.com"/></label><label>Phone (optional) <input type="tel" name="phone" autocomplete="tel" placeholder="+1 555 000 0000"/></label></div><label class="nl-consent"><input type="checkbox" name="consent" required/> <span>I consent to contact if I submit an enquiry. Read the <a href={`${base}privacy/`}>privacy and demo notice</a>.</span></label></fieldset>
+            <div data-quiz-error class="nl-quiz-error" role="alert" aria-live="polite"></div>
+            <div class="nl-quiz-controls"><button type="button" data-back class="nl-back" hidden>← Back</button><button type="button" data-next class="nl-next">Continue <span aria-hidden="true">→</span></button></div>
+            <div data-quiz-results hidden class="nl-quiz-results" aria-live="polite" tabindex="-1">
+              <p class="nl-kicker">YOUR CONCEPT SHORTLIST</p><h3>Example directions for your brief</h3>
+              <p data-brief-summary></p><p data-no-matches hidden class="nl-no-matches"></p>
+              <div data-example-options class="nl-results-grid"></div>
+              <p class="nl-results-disclaimer">These are fictional planning envelopes, not real listings, live prices, market quotes or personalized investment advice. Mortgage eligibility and actual taxes are not assessed.</p>
+              <button type="submit" class="nl-submit">Send an enquiry (demo) <span aria-hidden="true">↗</span></button>
+              <p data-feedback role="status" aria-live="polite"></p>
+            </div>
+            <noscript><p>The investor brief requires JavaScript. You can still explore destinations and read the calculator assumptions above.</p></noscript>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calculator" class="nl-section nl-calculator" aria-labelledby="nl-calculator-title">
+    <div class="container nl-calculator-layout">
+      <div class="nl-calculator-intro"><p class="nl-kicker">05 / THE NUMBERS</p><h2 id="nl-calculator-title">Understand the return <em>after expenses.</em></h2><p>Use the controls to explore an annual rental scenario. Change each assumption to see how the gross and net yields differ.</p><div class="nl-calculator-note"><strong>Illustrative model, not a projection.</strong><p>Excludes acquisition taxes, financing, capital gains, depreciation, resale costs, changes in currency and value. A real investment could perform differently.</p></div></div>
+      <div class="nl-calculator-card">
+        <div class="nl-calc-head"><strong>Annual rental scenario</strong><span>USD / SAMPLE</span></div>
+        <div class="nl-calc-inputs"><label>Purchase price (USD)<input type="number" min="1" max="1000000000" step="1000" value="450000" data-calc="price"/></label><label>Expected gross annual rent (USD)<input type="number" min="0" max="1000000000" step="500" value="31500" data-calc="rent"/></label><label>Service charges per year (USD)<input type="number" min="0" max="100000000" step="100" value="3600" data-calc="service"/></label><label>Management costs per year (USD)<input type="number" min="0" max="100000000" step="100" value="2400" data-calc="management"/></label><label class="nl-calc-wide">Annual occupancy <output id="occupancy-value">90%</output><input type="range" min="0" max="100" step="5" value="90" data-calc="occupancy"/></label></div>
+        <div class="nl-calc-results" aria-live="polite"><div><span>Gross rental yield</span><strong id="gross-yield">7.00%</strong></div><div><span>Estimated net yield</span><strong id="net-yield">4.97%</strong></div><div><span>Estimated net annual income</span><strong id="net-income">$22,350</strong></div></div>
+        <p class="nl-formula">Gross yield = annual rent ÷ purchase price. Net income = rent × occupancy − annual charges − management. Net yield = net income ÷ purchase price.</p>
+      </div>
+    </div>
+  </section>
+  <section class="nl-closing" aria-labelledby="nl-closing-title"><div class="container"><span>AN OPEN INVITATION</span><h2 id="nl-closing-title">Begin with <em>your priorities.</em></h2><a href="#qualification">Create an example investor brief ↗</a><p>NORTHLINE is a fictional portfolio demonstration. No actual property inventory, licensed financial service, transactions or guaranteed investment results.</p></div></section>
 </Layout>
 <script>import '../scripts/investor.ts';</script>
