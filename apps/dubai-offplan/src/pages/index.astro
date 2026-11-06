@@ -8,9 +8,9 @@ const assetHref = (file: string) => `${rootHref}${file.replace(/^\/+/, '')}`;
 const waNumber = String(import.meta.env.PUBLIC_WHATSAPP_NUMBER || '').replace(/\D/g, '');
 const waHref = waNumber ? `https://wa.me/${waNumber}?text=${encodeURIComponent('Hello. I would like to ask about MARIS Residences. I understand this is a portfolio demo.')}` : '#form-contact-preference';
 const photos = [
-  { src:assetHref('assets/project-waterfront.webp'),alt:'Original AI-generated fictional waterfront residential concept; not an actual development',caption:'Architectural concept / not a constructed property',cls:'gallery__large' },
-  { src:assetHref('assets/residence-interior.webp'),alt:'AI-generated concept interior representing potential design finishes, not a real unit',caption:'Interior mood study / illustrative',cls:'' },
-  { src:assetHref('assets/pool-terrace.webp'),alt:'AI-generated pool terrace concept, not an existing amenity',caption:'Landscape concept / illustrative',cls:'' }
+  { src:assetHref('assets/project-waterfront.webp'),alt:'Original AI-generated fictional waterfront residential concept; not an actual development',caption:'Architectural concept / not a constructed property',cls:'gallery__large',width:836,height:470 },
+  { src:assetHref('assets/residence-interior.webp'),alt:'AI-generated concept interior representing potential design finishes, not a real unit',caption:'Interior mood study / illustrative',cls:'',width:836,height:471 },
+  { src:assetHref('assets/pool-terrace.webp'),alt:'AI-generated pool terrace concept, not an existing amenity',caption:'Landscape concept / illustrative',cls:'',width:1080,height:500 }
 ];
 ---
 <Base title="MARIS Residences Dubai Islands | Off-Plan Concept & Floor Plans" description="Explore MARIS Residences, a fictional Dubai Islands off-plan portfolio demo. Sample prices, payment plan, floor plans and enquiry form — no real inventory.">
@@ -67,7 +67,7 @@ const photos = [
 
     <section class="section section--gallery" id="gallery" aria-labelledby="gallery-heading"><Container>
       <div class="section-kicker"><span>06 / GALLERY</span><span>ORIGINAL CONCEPT VISUALS / NOT REAL PROJECT PHOTOGRAPHY</span></div><div class="section-title-row"><h2 id="gallery-heading" class="display-heading">A sense of <em>place.</em></h2><p>These are original AI-generated concept visuals created for this portfolio, not approved renders, constructed interiors or marketing images of an actual development.</p></div>
-      <div class="gallery-grid">{photos.map(photo=><figure class:list={['gallery-figure',photo.cls]}><img src={photo.src} alt={photo.alt} width="836" height="470" loading="lazy"/><figcaption>{photo.caption}</figcaption></figure>)}</div>
+      <div class="gallery-grid">{photos.map(photo=><figure class:list={['gallery-figure',photo.cls]}><img src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy"/><figcaption>{photo.caption}</figcaption></figure>)}</div>
     </Container></section>
 
     <section class="section section--location" id="location" aria-labelledby="location-heading"><Container>
