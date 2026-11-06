@@ -27,3 +27,68 @@ body{background:var(--paper);color:var(--ink);font-family:Arial,ui-sans-serif,sy
 .market-card img{object-fit:cover}
 @media(max-width:800px){.opportunities-grid{grid-template-columns:1fr 1fr}.opportunity-photo-card:last-child{grid-column:1/-1}.opportunity-photo-card:last-child img{height:300px}}
 @media(max-width:560px){.opportunities-grid{grid-template-columns:1fr}.opportunity-photo-card:last-child{grid-column:auto}.opportunity-photo-card img,.opportunity-photo-card:last-child img{height:270px}}
+
+
+/* DESIGN SYSTEM V3 — NORTHLINE / TRAVEL EDITORIAL.
+   A panoramic destination journal, deliberately unlike a transactional landing or catalogue. */
+:root{--paper:#eef1f3;--ink:#172b3c;--navy:#122f49;--accent:#ad723e;--line:#ccd6dc;--beige:#e3eaf0}
+body{background:var(--paper);color:var(--ink);font-family:"Trebuchet MS",Arial,system-ui,sans-serif}
+.demo-banner{background:#102a40;color:#f7f5ed}
+.site-header{background:#f6f8f8;border-color:#dce5e8}
+.brand{font:700 17px/1.2 "Trebuchet MS",Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.hero.container{position:relative;isolation:isolate;display:block;width:100%;max-width:none;min-height:780px;padding:0;background:#1d3543}
+.hero-photo{position:absolute;inset:0;width:100%;min-height:100%;height:100%;margin:0;z-index:-1}
+.hero-photo::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(9,30,48,.85) 0%,rgba(13,37,53,.59) 45%,rgba(16,47,67,.05) 90%);pointer-events:none}
+.hero-photo::after{z-index:1}
+.hero-photo img{height:100%;width:100%;object-fit:cover;object-position:center}
+.hero-photo figcaption{z-index:3}
+.hero-text{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-height:780px;max-width:1300px;width:min(1300px,calc(100% - 96px));margin-inline:auto;padding:90px 0 145px;color:#fff}
+.hero h1{color:#fff;font:400 clamp(68px,8.2vw,132px)/.94 Georgia,serif;letter-spacing:-.052em;max-width:760px;text-wrap:balance}
+.hero h1 em{font-style:italic;color:#f1d3aa}
+.hero .eyebrow{color:#f2d6a9}
+.hero-lead{max-width:530px;color:#f0f1ed;font-size:clamp(17px,1.8vw,22px)}
+.hero-note{color:#e5ebec;max-width:540px}
+.hero .button{background:#e9c9a0;color:#192e3b;border-radius:0}
+.hero .button:hover{background:#fff5df;color:#192e3b}
+.hero .text-button{color:#fff}
+.market-section{background:#e5ebef;padding-block:95px 115px}
+.market-grid{grid-template-columns:1.2fr 1fr 1fr;gap:12px}
+.market-card{position:relative;min-height:450px;overflow:hidden;color:#fff;background:#172e3a}
+.market-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.market-card:hover img{transform:scale(1.035)}
+.market-copy{position:absolute;inset:auto 0 0;padding:110px 24px 25px;background:linear-gradient(transparent,rgba(7,22,35,.94));color:#fff}
+.market-copy .eyebrow,.market-copy p,.market-tag{color:#fff}
+.market-copy h3{font:400 clamp(36px,3.4vw,56px)/1.05 Georgia,serif;letter-spacing:-.04em}
+.market-copy p{min-height:0;line-height:1.5}
+.market-tag{border-color:#c9d0d355}
+.opportunities-section{background:#f9faf8}
+.opportunities-grid{grid-template-columns:1.25fr .9fr .9fr;gap:20px}
+.opportunity-photo-card{background:#f0f3f4}
+.opportunity-photo-copy h3{font-family:Georgia,serif;font-weight:400}
+.logic-section{background:#eef1f3}
+.calculator-section{background:#172b3c;color:#fff}
+.calculator-copy .eyebrow,.calculator-copy h2,.calculator-copy h2 em{color:#efd6b6}
+.calculator-copy>p:not(.eyebrow){color:#dee5e8}
+.calculator-card{color:#172b3c;background:#fff}
+.quiz-section{background:#f6f8f9}
+.options input:checked+span{background:#dae9ef;border-color:#25445f}
+@media(max-width:800px){
+  .hero.container,.hero-text{min-height:690px}
+  .hero-text{width:calc(100% - 44px);padding:90px 0 125px}
+  .hero h1{font-size:clamp(54px,10vw,88px)}
+  .market-grid{grid-template-columns:1fr 1fr}
+  .market-card:last-child{grid-column:1/-1}
+  .market-card{min-height:385px}
+  .opportunities-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .hero.container,.hero-text{min-height:620px}
+  .hero-photo img{object-position:63% center}
+  .hero h1{font-size:clamp(48px,12vw,66px)}
+  .market-grid,.opportunities-grid{grid-template-columns:1fr}
+  .market-card,.market-card:last-child{grid-column:auto;min-height:330px}
+  .market-card img{height:100%}
+  .market-copy{padding:70px 20px 20px}
+  .hero-actions{gap:18px}
+  .hero-note{font-size:11px}
+}
