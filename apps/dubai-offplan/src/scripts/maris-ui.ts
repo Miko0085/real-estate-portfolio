@@ -39,7 +39,13 @@ const filters=[...document.querySelectorAll<HTMLButtonElement>('[data-gallery-fi
 filters.forEach(filter=>filter.addEventListener('click',()=>{
   const cat=filter.dataset.galleryFilter || 'all';
   filters.forEach(f=>f.setAttribute('aria-pressed',String(f===filter)));
-  galleryButtons.forEach(item=>item.hidden = cat !== 'all' && item.dataset.category !== cat);
+  galleryButtons.forEach(item => {
+    item.hidden = cat !== 'all' && item.dataset.category !== cat;
+    item.classList.remove('m-gallery-lead');
+  });
+  const firstVisible = galleryButtons.find(item => !item.hidden);
+  firstVisible?.classList.add('m-gallery-lead');
+  document.querySelector('.m-gallery-grid')?.classList.toggle('is-filtered',cat !== 'all');
 }));
 const dialog=document.querySelector<HTMLDialogElement>('#maris-lightbox');
 const photo=dialog?.querySelector<HTMLImageElement>('[data-lightbox-image]');
