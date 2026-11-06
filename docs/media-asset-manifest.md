@@ -18,3 +18,15 @@ Files use WebP with dimensions in markup when possible. The **video is an animat
 ## Open QA
 
 Screenshots, mobile crop comparisons at 320/375/430/768/1024/1440, Lighthouse field metrics and human accessibility review remain to be performed. Genuine location photography, actual development footage, agent materials and live listing photos are not supplied or claimed. No CRM or actual sale exists.
+
+## Visual differentiation — additional assets (2026-11-06)
+
+The following scenes were **originally generated for this demonstration**. They are fictional visuals and not actual inventory.
+
+- `dubai-offplan/assets/dubai-daylight.webp`: bright blue high-key waterfront project concept; 836×470.
+- `luxury-brokerage/assets/brokerage-noir.webp`: monochrome urban penthouse editorial concept; 836×470.
+- `seller-leads/assets/seller-daylight.webp`: approachable daylight family residence concept; 836×471.
+- `developer-project/assets/developer-desert.webp`: monolithic stone residence and landscape study; 836×471.
+- `developer-project/media/developer-concept-motion.mp4`: 8-second silent user-controlled H.264 camera-motion treatment of the generated still. **Not real property footage.**
+
+The previous coastal/interior imagery remains in other pages, clearly labeled illustrative; the new images establish separate hero art directions. External reference-site photos/videos are not reused.

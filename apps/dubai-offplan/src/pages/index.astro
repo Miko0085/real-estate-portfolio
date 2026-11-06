@@ -8,7 +8,7 @@ const assetHref = (file: string) => `${rootHref}${file.replace(/^\/+/, '')}`;
 const waNumber = String(import.meta.env.PUBLIC_WHATSAPP_NUMBER || '').replace(/\D/g, '');
 const waHref = waNumber ? `https://wa.me/${waNumber}?text=${encodeURIComponent('Hello. I would like to ask about MARIS Residences. I understand this is a portfolio demo.')}` : '#form-contact-preference';
 const photos = [
-  { src:assetHref('assets/project-waterfront.webp'),alt:'Original AI-generated fictional waterfront residential concept; not an actual development',caption:'Architectural concept / not a constructed property',cls:'gallery__large',width:836,height:470 },
+  { src:assetHref('assets/dubai-daylight.webp'),alt:'Original AI-generated fictional waterfront residential concept; not an actual development',caption:'Architectural concept / not a constructed property',cls:'gallery__large',width:836,height:470 },
   { src:assetHref('assets/residence-interior.webp'),alt:'AI-generated concept interior representing potential design finishes, not a real unit',caption:'Interior mood study / illustrative',cls:'',width:836,height:471 },
   { src:assetHref('assets/pool-terrace.webp'),alt:'AI-generated pool terrace concept, not an existing amenity',caption:'Landscape concept / illustrative',cls:'',width:1080,height:500 }
 ];
@@ -33,7 +33,7 @@ const photos = [
           <div class="hero-actions"><Button href="#residences">Explore residences</Button><a class="text-link" href="#floorplans">See floor plans <span aria-hidden="true">↗</span></a></div>
           <p class="hero-note">Concept project. No property is being offered for sale.</p>
         </div>
-        <div class="hero-visual"><img src={assetHref('assets/project-waterfront.webp')} alt="Original AI-generated architectural concept; fictional residence not built" width="836" height="470" fetchpriority="high" /><div class="hero-image-label">FIG. 01 / THE COASTAL IDEA <span>ORIGINAL CONCEPT ART</span></div></div>
+        <div class="hero-visual"><img src={assetHref('assets/dubai-daylight.webp')} alt="Original daylight concept of fictional waterfront residences; not an existing property" width="836" height="470" fetchpriority="high" /><div class="hero-image-label">FIG. 01 / THE COASTAL IDEA <span>ORIGINAL CONCEPT ART</span></div></div>
       </Container>
       <Container className="quickfacts" ><div><span>ILLUSTRATIVE STARTING PRICE</span><strong>AED 1.85M</strong></div><div><span>SAMPLE PAYMENT PLAN</span><strong>20 / 50 / 30</strong></div><div><span>SAMPLE HANDOVER</span><strong>Q4 2029</strong></div><a href="#enquire">Request project details <span aria-hidden="true">↗</span></a></Container>
     </section>

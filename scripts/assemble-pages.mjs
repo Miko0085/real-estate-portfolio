@@ -42,6 +42,13 @@ const expectedMedia = [
 for (const [site,media] of expectedMedia) {
  if (!existsSync(join(out,site,media))) throw new Error('Required media missing: '+site+'/'+media);
 }
+for(const [site,asset] of [
+ ['dubai-offplan','assets/dubai-daylight.webp'],
+ ['luxury-brokerage','assets/brokerage-noir.webp'],
+ ['seller-leads','assets/seller-daylight.webp'],
+ ['developer-project','assets/developer-desert.webp'],
+ ['developer-project','media/developer-concept-motion.mp4']
+]) if(!existsSync(join(out,site,asset))) throw new Error('Missing distinct design asset: '+site+'/'+asset);
 const dubaiRoot = readFileSync(join(out,'dubai-offplan','index.html'),'utf8');
 const dubaiPrivacy = readFileSync(join(out,'dubai-offplan','privacy','index.html'),'utf8');
 for (const [page,expected] of [[dubaiRoot,'/real-estate-portfolio/dubai-offplan/'],[dubaiPrivacy,'/real-estate-portfolio/dubai-offplan/privacy/']]) {

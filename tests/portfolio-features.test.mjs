@@ -62,3 +62,15 @@ test('photography and concept film assets exist in every application',()=>{
  const html=read('apps/developer-project/src/pages/index.astro');
  assert.ok(html.includes('<video')&&html.includes('controls')&&html.includes('preload="none"')&&html.includes('ANIMATED STILLS'));
 });
+
+test('design v3 hero media and developer video have real local files',()=>{
+ for (const [site, filename] of [
+   ['dubai-offplan','dubai-daylight.webp'],
+   ['luxury-brokerage','brokerage-noir.webp'],
+   ['seller-leads','seller-daylight.webp'],
+   ['developer-project','developer-desert.webp']
+ ]) {
+   assert.ok(existsSync(join(root,'apps',site,'public/assets',filename)),site+' '+filename);
+ }
+ assert.ok(existsSync(join(root,'apps/developer-project/public/media/developer-concept-motion.mp4')));
+});
