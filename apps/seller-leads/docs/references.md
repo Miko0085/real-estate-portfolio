@@ -10,7 +10,7 @@ Status: Implemented portfolio demonstration; all data fictional. References rese
 
 ## High-quality design reference sites (3)
 
-1. **[Savills](https://www.savills.com/)** — Institutional clarity without gimmicks.
+1. **[Redfin — What is my home worth?](https://www.redfin.com/what-is-my-home-worth)** — Low-friction entry to property value.
 2. **[betterhomes](https://www.bhomes.com/en/property-valuation)** — Simple step numbering and trust cues.
 3. **[The Agency](https://www.theagencyre.com/)** — Lifestyle imagery balanced with utilitarian CTAs.
 

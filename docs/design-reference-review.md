@@ -28,23 +28,27 @@
 
 **Proposed distinctive system:** deep mineral teal + ivory + restrained copper; 12-column large-screen layout, simple sans labels and a characterful display serif. Not a pixel copy of Ellington.
 
-## 2. International Investor Advisory — data-first advisory
+## 2. International Investor Advisory — photographic, property-first curation
 
-**Primary visual/IA reference:** [Knight Frank — global property services](https://www.knightfrank.com/services) (international service hierarchy, trustworthy editorial content, access to research and consultation).
+**Rejected design direction:** no financial-report aesthetic, corporate research portals, large abstract circles or data tables in the first viewport. The existing Investor Advisory app remains a portfolio website; only its visual direction is being replaced.
 
-**Supporting references:** [Savills — Global Research](https://www.savills.com/insight-and-opinion/research.aspx?page=1&rc=World) (structured research/publication surfaces); [Global Property Guide — rental yield comparisons](https://www.globalpropertyguide.com/rental-yields) (numeric scannability, market comparison tables and clearly described methodology).
+**Primary visual reference:** [Christie's International Real Estate Dubai](https://www.christiesrealestatedubai.com/) and its [Portfolio Journal](https://www.christiesrealestatedubai.com/the-journal/category/portfolio/) — rich architectural imagery, curated collections, calm editorial copy, luxury residential photography.
 
-**Style to study:** financial-publishing aesthetic rather than glossy property-advertising hero: compact typography scale for controls, bold editorial headings, light background, disciplined grids, ample contrast, restrained charts with visible units and explanatory labels. The calculator should visually resemble an analytical workspace, not a marketing widget.
+**Secondary reference:** [Engel & Völkers — international properties](https://www.engelvoelkers.com/ae/en) — global destination navigation, location-led photography and lifestyle-first discovery.
 
-**What to adapt:**
-1. Intro explaining who the advisory flow serves + one primary **Explore options** CTA; no decorative giant shape that says nothing.
-2. One-question-per-step qualification with step count, Back, Save progress when reasonable, explicit results labeled “illustrative scenarios”.
-3. Calculator with input and result panes, formula/methodology, assumptions, currency, occupancy, expenses and gross vs estimated net yield.
-4. Structured market/strategy cards with risk flags and “why this is shown” explanations; CTA for a consultation without suggesting regulated financial advice.
+**Secondary reference:** [SERHANT.](https://serhant.com/) — property storytelling and genuine video tours, with controls and visible preview imagery.
 
-**Do not copy:** firm credentials, charts/data, logos, forecasts, yield guarantees or recommendation logic. Avoid presenting illustrative model outputs as real opportunities.
+**Visual pattern:**
+1. A full-bleed or 55/45 photographic architectural hero with a concise original headline and one CTA: **Build your brief**.
+2. Three DISTINCT photographic city panels for Dubai, Lisbon and London, with restrained city labels and short reasons to explore.
+3. Curated example properties with original/authorized images, country, type and investment intent; clear DEMO badges. The image comes before quantitative detail.
+4. Seven-step qualification shown as an elegant, accessible flow that still works and produces fictional scenarios without compulsory contact.
+5. An illustrative yield calculator as a lower-page utility, not the dominant visual identity. Keep the costs, occupancy and limitations explicit.
+6. Optional original cinematic clip as a genuine working video player with poster/controls, not copied footage or a fake play icon.
 
-**Proposed distinctive system:** warm white + midnight navy + muted bronze; dense but readable tables, monospace numeric accents, sober editorial sans headlines. Keep this site distinct from premium cinematic developer projects.
+**Candidate design tokens (original proposal):** warm ivory #F5F2EC, charcoal #20282D, deep slate-blue #283D52, muted brass #9A7959. Large photographic canvases, editorial display serif and disciplined sans controls.
+
+**Do not copy:** screenshots, photographs, videos, actual listings, names, logos, earnings, licenses, testimonials or exact layouts. Illustrative scenes must not be represented as real inventory.
 
 ## 3. Luxury Brokerage — searchable catalogue
 
@@ -68,7 +72,7 @@
 
 **Primary UX/IA reference:** [betterhomes — property valuation](https://www.bhomes.com/en/sales/property-valuation) (explainable 3-step process: details → expert consultation → report; visible FAQs and valuation CTA).
 
-**Supporting references:** [Redfin — What is my home worth?](https://www.redfin.com/what-is-my-home-worth) (prominent single address entry); [Savills — selling a residential property](https://www.savills.co.uk/services/buying-or-selling/selling-a-residential-property.aspx) (strong customer reassurance and clear valuation route).
+**Supporting references:** [Redfin — What is my home worth?](https://www.redfin.com/what-is-my-home-worth) (prominent single address entry); [The Agency — seller services](https://www.theagencyre.com/) (strong customer reassurance and clear valuation route).
 
 **Style to study:** a high-contrast, low-friction utility page: generous white space, one strong headline, visually simple form, numbered process and a few substantive credibility explanations. Use photography as context, never let it compete with the first form interaction.
 
@@ -78,7 +82,7 @@
 3. “How it works” and “Marketing approach” sections plus concise FAQs; mobile touch targets and useful error messages.
 4. Honest sample-market observations with clear “demo / no live valuation” disclosure instead of generating a fabricated estimate.
 
-**Do not copy:** betterhomes/Savills trust statistics, success rate, testimonials, agents, logo or inaccurate valuation guarantee. Do not display a real-looking AI-generated value without a valid data methodology.
+**Do not copy:** third-party trust statistics, success rate, testimonials, agents, logo or inaccurate valuation guarantee. Do not display a real-looking AI-generated value without a valid data methodology.
 
 **Proposed distinctive system:** warm off-white + forest ink + clay accent; large confident sans headings, restrained imagery, prominent form surface. Different UX from Investor quiz by reducing distractions.
 
@@ -112,3 +116,12 @@ Before further visual implementation, prepare for **each site**:
 - Check demo disclosures, accessible forms, reduced motion, image rights, actual responsive and Lighthouse numbers once built.
 
 **Do not start another whole-site visual rebuild before these references and first-screen treatments are reviewed.** Functional code and existing routes remain unchanged by this research phase.
+## Portfolio imagery and video — required visual completeness gate
+
+All five published applications must include **real visual content**: original or licensed architectural/interior/location photography. Abstract vector drawings are not sufficient on their own to make real-estate demo websites feel complete.
+
+For every project, preserve a distinctive and consistent art direction, multiple **different** images for property/market/amenity cards, and coherent mobile crops. If a primary reference uses video, make a **real original or licensed playable sample video** (not a competitor download or dummy player) or use a polished static hero until footage exists.
+
+Every video requires poster, controls, muted behavior where appropriate, reduced-motion handling, fallback and captions for speech. Serve responsive AVIF/WebP with explicit dimensions, LCP priority only on the hero, alt text and source/license documentation. Generative property images must be labeled conceptual and not actual listings. Conduct desktop/mobile visual review of the **deployed** result.
+
+See [site media standards](media-production-standards.md) for the minimum per-project asset list.

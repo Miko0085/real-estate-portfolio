@@ -1,27 +1,24 @@
-# References — NORTHLINE Advisory · fictional brand
+# NORTHLINE Advisory — new image-led visual reference direction
 
-Status: Implemented portfolio demonstration; all data fictional. References researched before implementation. Link to third-party sites for **pattern study only**, not authorization to copy photography, logos, text, code or design in full.
+**Decision:** The original data-first advisory styling and corporate research aesthetic are rejected. The fictional Investor Advisory demo stays in the five-site portfolio.
 
-## Real websites — information architecture (3)
+## Visual design references
 
-1. **[Knight Frank](https://www.knightfrank.com/)** — Global services and expert/market navigation.
-2. **[Savills](https://www.savills.com/)** — International property discovery and research access.
-3. **[Henley & Partners](https://www.henleyglobal.com/)** — Cross-border qualification and request-consultation hierarchy; no immigration promises.
+1. **Primary:** [Christie's International Real Estate Dubai](https://www.christiesrealestatedubai.com/) — premium residential imagery, curated luxury property collections and editorial pace.
+2. **Supporting:** [Engel & Völkers — worldwide homes](https://www.engelvoelkers.com/ae/en) — international market photography and city/region navigation.
+3. **Supporting:** [SERHANT.](https://serhant.com/) — bold property photography and real property video-tour presentation.
 
-## High-quality design reference sites (3)
+## Specific decisions
 
-1. **[Knight Frank](https://www.knightfrank.com/)** — Research-forward graphic hierarchy and editorial white space.
-2. **[Savills](https://www.savills.com/)** — Serious professional tone and structured content.
-3. **[Global Property Guide](https://www.globalpropertyguide.com/rent-yields)** — Data-first tables and readable financial metrics.
+- Architectural hero image fills a substantial proportion of the first viewport; one headline and a direct **Build your brief** CTA.
+- Market panels for Dubai/Lisbon/London must have distinct original or licensed *photographic* imagery, not wireframe skylines.
+- Include curated, visual, imaginary investment examples before long financial details.
+- Retain the working 7-step quiz and illustrative yield calculator; the calculator belongs lower on the page.
+- Include a genuine playable video only when original/licensed source exists; otherwise a high-quality still with no fake play control.
+- Use warm ivory, charcoal, deep slate and soft brass as an original palette proposal, **not** a copy of any referenced site's CSS.
 
-## Specific UI patterns to reference
+Do not copy third-party photos/videos, logos, listings, data, returns or reputational claims. Illustrative properties must be disclosed as fictional.
 
-Step indicator → budget → objective → market → ready/off-plan → timeline → financing → contact → sample options; conservative yield equation.
+## Acceptance before final design approval
 
-## What must not be copied
-
-Do not copy financial advice, immigration eligibility, returns or firm credentials; no guarantee, fake ROI, or claimed advisory licensing.
-
-## Original design specification
-
-Navy #12213A and copper #A46A45, analytical tables, crisp numeric hierarchy, editorial white space, no image-heavy hero.
+Reference screenshots at desktop and mobile sizes; original hero proposal; 3+ distinct market/property visuals; correct asset rights and image optimization; functional quiz and calculator after the redesign.
