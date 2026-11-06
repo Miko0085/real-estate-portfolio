@@ -26,5 +26,25 @@ for (const slug of projects) {
   if (!portfolio.includes(`href="./${slug}/"`)) throw new Error(`Missing navigation link: ${slug}`);
 }
 if (!portfolio.includes('styles.css')) throw new Error('Portfolio stylesheet not linked');
-if (!existsSync(join(out, 'dubai-offplan', 'assets', 'coastal-residence.svg'))) throw new Error('Dubai Off-Plan preview image is missing');
+const expectedMedia = [
+ ['dubai-offplan','assets/project-waterfront.webp'],
+ ['dubai-offplan','assets/residence-interior.webp'],
+ ['investor-advisory','assets/market-dubai.webp'],
+ ['investor-advisory','assets/market-lisbon.webp'],
+ ['investor-advisory','assets/market-london.webp'],
+ ['luxury-brokerage','assets/shoreline.webp'],
+ ['luxury-brokerage','assets/courtyard.webp'],
+ ['seller-leads','assets/fieldnote-residence.webp'],
+ ['developer-project','assets/sera-hero.webp'],
+ ['developer-project','assets/sera-pool.webp'],
+ ['developer-project','media/sera-concept-motion.mp4']
+];
+for (const [site,media] of expectedMedia) {
+ if (!existsSync(join(out,site,media))) throw new Error('Required media missing: '+site+'/'+media);
+}
+const dubaiRoot = readFileSync(join(out,'dubai-offplan','index.html'),'utf8');
+const dubaiPrivacy = readFileSync(join(out,'dubai-offplan','privacy','index.html'),'utf8');
+for (const [page,expected] of [[dubaiRoot,'/real-estate-portfolio/dubai-offplan/'],[dubaiPrivacy,'/real-estate-portfolio/dubai-offplan/privacy/']]) {
+ if (!page.includes('rel="canonical"') || !page.includes(expected)) throw new Error('Dubai canonical URL missing expected GitHub Pages base '+expected);
+}
 console.log('GitHub Pages build: real-estate website portfolio plus five real-estate applications.');

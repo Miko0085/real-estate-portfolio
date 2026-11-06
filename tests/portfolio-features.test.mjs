@@ -20,7 +20,7 @@ test('all four upgraded applications have real UI and privacy pages',()=>{
     assert.ok(!html.includes('NOT LAUNCHED') && !html.includes('IMPLEMENTATION PENDING'));
     assert.ok(existsSync(join(root,path+'privacy/index.astro')));
     assert.ok(existsSync(join(root,`apps/${site}/public/favicon.svg`)));
-    if(site==='investor-advisory') for(const market of ['dubai','lisbon','london']) assert.ok(existsSync(join(root,`apps/${site}/public/assets/market-${market}.svg`)));
+    if(site==='investor-advisory') for(const market of ['dubai','lisbon','london']) assert.ok(existsSync(join(root,`apps/${site}/public/assets/market-${market}.webp`)));
   }
 });
 test('investor brief and rental model have inputs and conditional options',()=>{
@@ -46,4 +46,19 @@ test('developer plan/brochure are local, fictional and downloadable',()=>{
   for(const f of ['horizon-plan.svg','sanctuary-plan.svg'])assert.ok(existsSync(join(root,`${base}/floorplans/${f}`)));
   const html=read('apps/developer-project/src/pages/index.astro');
   for(const id of ['vision','residences','masterplan','amenities','location','payment','enquire'])assert.ok(html.includes(`id="${id}"`));
+});
+
+test('photography and concept film assets exist in every application',()=>{
+ const required={
+  'dubai-offplan':['project-waterfront.webp','residence-interior.webp','pool-terrace.webp'],
+  'investor-advisory':['advisory-residence.webp','market-dubai.webp','market-lisbon.webp','market-london.webp','opportunity-coast.webp'],
+  'luxury-brokerage':['shoreline.webp','courtyard.webp','marina.webp','horizon.webp','garden.webp','quayside.webp'],
+  'seller-leads':['fieldnote-residence.webp','marketing-study.webp'],
+  'developer-project':['sera-hero.webp','sera-architecture.webp','residence-a.webp','residence-b.webp','sera-pool.webp']
+ };
+ for(const [site,names] of Object.entries(required))for(const name of names)assert.ok(existsSync(join(root,'apps',site,'public','assets',name)),site+' / '+name);
+ const film=join(root,'apps/developer-project/public/media/sera-concept-motion.mp4');
+ assert.ok(existsSync(film),'Playable concept film');
+ const html=read('apps/developer-project/src/pages/index.astro');
+ assert.ok(html.includes('<video')&&html.includes('controls')&&html.includes('preload="none"')&&html.includes('ANIMATED STILLS'));
 });

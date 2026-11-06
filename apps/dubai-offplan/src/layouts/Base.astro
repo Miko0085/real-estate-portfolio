@@ -5,7 +5,8 @@ import Seo from '@estate/seo/Seo.astro';
 import { webPageSchema, breadcrumbs } from '@estate/structured-data';
 interface Props { title:string; description:string; path?:string; }
 const { title, description, path='/' } = Astro.props;
-const base = Astro.site || new URL('https://example.com/');
+const rootOrigin = Astro.site || new URL('https://example.com/');
+const base = new URL(import.meta.env.BASE_URL, rootOrigin);
 const canonical = new URL(path.replace(/^\/+/, ''), base).toString();
 const image = new URL('og-cover.png',base).toString();
 const index = import.meta.env.PUBLIC_INDEX_SITE === 'true' && Boolean(import.meta.env.PUBLIC_SITE_URL);
