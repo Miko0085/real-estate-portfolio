@@ -8,6 +8,12 @@
 2. **Supporting:** [Engel & Völkers — worldwide homes](https://www.engelvoelkers.com/ae/en) — international market photography and city/region navigation.
 3. **Supporting:** [SERHANT.](https://serhant.com/) — bold property photography and real property video-tour presentation.
 
+## Specific page-level UX references
+
+1. [Christie's Dubai — curated Portfolio Journal](https://www.christiesrealestatedubai.com/the-journal/category/portfolio/) — media-led property collections and article previews.
+2. [Engel & Völkers — locations worldwide](https://www.engelvoelkers.com/fr/en/shops) — structured international destination discovery.
+3. [SERHANT. — sample property detail with video](https://serhant.com/properties/324-west-montgomery-street-allentown-city-pa-18103-724209) — property media presentation and an actual video interaction.
+
 ## Specific decisions
 
 - Architectural hero image fills a substantial proportion of the first viewport; one headline and a direct **Build your brief** CTA.
