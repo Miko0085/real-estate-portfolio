@@ -13,3 +13,63 @@ body{font-family:Arial,ui-sans-serif,system-ui,sans-serif;color:var(--ink);backg
 .concept-film{display:block;width:100%;aspect-ratio:16/9;background:#342722;object-fit:cover;box-shadow:none}
 .concept-film:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 @media(max-width:650px){.film-header{flex-direction:column;align-items:flex-start;gap:20px}.concept-film-section{padding-block:70px}}
+
+
+/* DESIGN SYSTEM V3 — SERA / CONTEMPORARY ARCHITECTURE MAGAZINE.
+   Gallery-grade mineral palette, architectural negative space and cinematic typography. */
+:root{--paper:#e8e4db;--ink:#211e1c;--accent:#8f3c33;--line:#c1b9ac;--sand:#d5cabc;--white:#f7f3ec}
+body{background:var(--paper);color:var(--ink);font-family:"Helvetica Neue",Arial,system-ui,sans-serif}
+.demo-banner{background:#282322;color:#e8d7c8;position:relative;z-index:35}
+.site-header{position:absolute;top:33px;left:0;width:100%;z-index:30;background:transparent;color:#fff;border-bottom:1px solid rgba(255,255,255,.38)}
+.site-header .desktop-nav a{color:#fff;font-weight:700}
+.brand{font:400 27px/1.1 Georgia,serif;letter-spacing:.22em}
+.nav-shell{min-height:98px}
+.hero{min-height:clamp(770px,100svh,1120px);background:#51453b}
+.hero>img{filter:grayscale(.55) saturate(.7) contrast(1.16) brightness(.82);object-position:center 55%}
+.hero-shade{background:linear-gradient(90deg,rgba(23,17,16,.73) 0%,rgba(21,17,16,.32) 50%,rgba(20,15,15,.05) 100%)}
+.hero-copy{padding-top:clamp(215px,22vw,345px);padding-bottom:150px}
+.hero-copy .eyebrow{color:#f1e8d8;letter-spacing:.29em}
+.hero h1{font:400 clamp(72px,9.6vw,176px)/.86 Georgia,"Times New Roman",serif;letter-spacing:-.065em;max-width:1120px;margin:42px 0}
+.hero h1 em{font-weight:400;color:#e7dbc9}
+.hero-copy>p:not(.eyebrow){font:400 clamp(18px,2vw,27px)/1.5 Georgia,serif;color:#fff}
+.hero-foot{color:#fbf1e5}
+.light-link{font:800 11px Arial,sans-serif;text-transform:uppercase;letter-spacing:.2em}
+.vision-section{background:#ece9e1}
+.vision-grid h2,.architecture-copy h2,.section-title h2,.masterplan-grid h2,.amenity-intro h2,.gallery-section h2,.location-grid h2,.payment-grid h2,.enquire-section h2{font-family:Georgia,serif;font-weight:400;letter-spacing:-.07em}
+.vision-grid h2 em,.section-title h2 em,.amenity-intro h2 em,.location-grid h2 em{color:#8f3c33}
+.architecture-section{background:#362725;color:#f7ede1}
+.architecture-copy .eyebrow{color:#d6a99d}
+.architecture-grid>img{filter:grayscale(.55) contrast(1.15)}
+.residences-section{background:#efebe4}
+.residence-info{background:#e7e1d7}
+.masterplan-section{background:#f0ece5}
+.amenities-section{background:#e8e4db}
+.gallery-section{background:#cec5b9}
+.gallery-grid img{filter:saturate(.65)}
+.payment-section{background:#171d20;color:#f5efe4}
+.payment-block{background:#2a3437}
+.payment-bar span{color:#182023}
+.payment-block dl div{border-color:#5e686c}
+.concept-film-section{background:#252729;color:#f8f0e3;width:100%;max-width:none;padding-left:max(36px,calc((100vw - 1300px)/2));padding-right:max(36px,calc((100vw - 1300px)/2))}
+.concept-film-section .section-label{color:#e9ddd2;border-color:#6e6c68}
+.film-header p{color:#d6cdc1}
+.enquire-section{background:#e8e4db}
+.interest-form{background:#eee9df;border:1px solid #cbbdb1}
+.send{background:#8f3c33}
+.site-footer{background:#211f1e;color:#f5f0e9}
+.footer-inner p{color:#ddd4cc}
+@media(max-width:800px){
+ .site-header{top:33px}
+ .site-header .mobile-nav summary{color:#fff}
+ .site-header .mobile-nav nav{background:#f7f3ec;color:#1e1d1c}
+ .hero-copy{padding-top:190px}
+ .hero h1{font-size:clamp(65px,10.8vw,120px)}
+ .concept-film-section{padding-inline:24px}
+}
+@media(max-width:600px){
+ .hero{min-height:710px}
+ .hero-copy{padding-top:210px}
+ .hero h1{font-size:clamp(56px,11.5vw,82px)}
+ .nav-shell{min-height:76px}
+ .concept-film-section{padding-inline:18px}
+}

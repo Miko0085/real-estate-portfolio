@@ -19,3 +19,35 @@
 @media(max-width:480px){.site-container{width:calc(100% - 32px)}.header-inner{gap:8px}.header-cta{font-size:10px;margin-right:8px}.hero-copy{padding-top:52px}.hero h1{font-size:clamp(58px,13.4vw,72px)}.hero-visual{height:350px}.hero-actions{gap:14px}.hero-actions .button{padding:14px 17px}.quickfacts strong{font-size:24px}.quickfacts>div span{font-size:9px}.quickfacts>a{min-height:64px;text-align:left}.section-kicker>span:last-child{max-width:43%}.display-heading{font-size:clamp(48px,12.1vw,62px)}.manifesto-row{grid-template-columns:1fr 1fr}.manifesto-row strong{font-size:25px}.residence-card{grid-template-columns:1fr}.residence-art{height:210px;min-height:0}.residence-details{min-height:175px}.floorplan-list{grid-template-columns:1fr}.floorplan-item img{height:250px}.amenity-list{grid-template-columns:1fr 1fr;gap:30px 16px}.amenity-list strong{font-size:23px}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-figure:first-child{grid-column:1/-1;grid-row:auto}.gallery-figure:first-child img{height:350px}.gallery-figure img{height:190px}.gallery-figure figcaption{font-size:9px}.risk-grid{grid-template-columns:1fr}.lead-form{padding:26px 18px}.form-fields{grid-template-columns:1fr;gap:18px}.field--wide{grid-column:auto}.field-hint{margin:-10px 0 0}.consent{grid-template-columns:21px 1fr}.form-heading h3{font-size:33px}.footer-bottom nav{gap:15px}}
 @media(max-width:360px){.site-container{width:calc(100% - 28px)}.header-cta{padding:10px 0;gap:4px}.hero h1{font-size:58px}.hero-visual{height:305px}.hero-actions .button{font-size:11px}.quickfacts strong{font-size:21px}.quickfacts>a{font-size:10px;padding:12px}.gallery-figure img{height:155px}.amenity-list{grid-template-columns:1fr}.display-heading{font-size:50px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+
+/* DESIGN SYSTEM V3 — MARIS / SEARCH CAMPAIGN DEVELOPMENT PAGE.
+   Transaction-oriented crisp blue/white, geometric headings and quick information access. */
+:root{--ink:#0a3448;--deep:#07334a;--paper:#f7fbfd;--cream:#edf6f8;--sand:#d9eaef;--line:#c7dfe7;--accent:#00788d;--muted:#486c7b;--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,system-ui,sans-serif}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper)}
+.demo-band{background:#dff2f6;border-color:#c2e5ed;color:#07536b}
+.demo-dot{background:#0c9ab5}
+.site-header{background:#fff;border-color:#d9e8ed}
+.header-inner{height:78px}
+.wordmark{font-weight:850;letter-spacing:-.075em}
+.wordmark-dot{color:#008fa7}
+.hero-grid{grid-template-columns:44% 56%;min-height:670px}
+.hero-copy{padding-right:8%}
+.hero h1{font:800 clamp(58px,6.3vw,106px)/.92 Arial,Helvetica,sans-serif;letter-spacing:-.085em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:#008ca4}
+.hero-intro{color:#426878;font-size:clamp(16px,1.45vw,20px)}
+.hero-visual{background:#b9d9e6;min-height:640px}
+.hero-visual img{filter:saturate(1.14) contrast(1.04);object-position:center}
+.hero-image-label{background:rgba(3,43,63,.85);padding:13px 18px;left:0;right:0;bottom:0}
+.button{border-radius:5px;background:#074e69;min-height:52px;font-weight:800}
+.button:hover{background:#00788d}
+.eyebrow{color:#00788d}
+.display-heading{letter-spacing:-.065em}
+.display-heading em{color:#00849c}
+.residence-card,.floorplan-item{border-color:#c6dce4;background:#fff}
+.section--gallery{background:#eaf5f8}
+.gallery-grid img{object-fit:cover}
+.footer-bottom{border-color:#cadfe6}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr 1fr}.hero h1{font-size:clamp(50px,7vw,76px)}}
+@media(max-width:760px){.hero-grid{grid-template-columns:1fr}.hero-copy{padding:75px 0 45px}.hero h1{font-size:clamp(56px,10vw,78px)}.hero-visual{min-height:420px}}
+@media(max-width:420px){.hero h1{font-size:clamp(50px,13vw,69px)}.hero-visual{min-height:325px}}

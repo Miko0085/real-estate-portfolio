@@ -4,3 +4,50 @@ body{font-family:ui-sans-serif,system-ui,Arial,sans-serif;background:var(--paper
 @media(max-width:1000px){.hero-grid{gap:40px}.hero-art,.hero-art img{min-height:470px;height:470px}.valuation-layout{gap:45px}.why-grid{gap:45px}.marketing-layout{gap:45px}.marketing-layout img{height:450px}}
 @media(max-width:800px){.hero-grid,.why-grid,.valuation-layout,.marketing-layout,.faq-layout{grid-template-columns:1fr}.hero{padding-top:60px}.hero-art,.hero-art img{min-height:420px;height:420px}.valuation-intro{max-width:600px}.privacy-panel{margin-top:22px}.why-section,.process-section,.insights-section{padding-block:85px}.faq-section{padding-block:75px}.marketing-layout img{height:420px}.valuation-layout{gap:35px}}
 @media(max-width:600px){.hero h1{font-size:clamp(51px,12vw,70px)}.hero-art,.hero-art img{height:320px;min-height:320px}.art-caption{font-size:8px}.value-strip{grid-template-columns:1fr;gap:5px;padding-block:20px}.value-strip div{padding:7px 0}.form-grid,.process-grid,.insight-grid{grid-template-columns:1fr}.form-grid label.wide{grid-column:auto}.section-title{margin-bottom:38px}.section-title h2{font-size:clamp(43px,10vw,60px)}.process-grid h3{margin-top:25px}.marketing-layout img{height:315px}.bottom-cta{padding-block:70px;display:block}.bottom-cta .primary{margin-top:27px}.valuation-form{padding:25px 20px}.valuation-form legend{font-size:36px}.wizard-actions .next{padding:12px 16px;gap:12px}.faq-layout{gap:15px}}
+
+
+/* DESIGN SYSTEM V3 — FIELDNOTE / SERVICE PRODUCT.
+   Blue-and-white conversion UI with approachable sans typography, not a luxury brochure. */
+:root{--paper:#f7faff;--ink:#142c51;--accent:#e76837;--forest:#2456d3;--line:#d5e0f0;--cream:#e8effc}
+body{background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,system-ui,sans-serif}
+.demo-banner{background:#1e49ae;color:#fff}
+.site-header{background:#fff;border-color:#d7e1ef}
+.brand{font:800 18px Arial,Helvetica,sans-serif;letter-spacing:-.035em;text-transform:none}
+.desktop-nav a{font-weight:700;color:#273d5b}
+.eyebrow{color:#2b5ee0;font-weight:800}
+.hero{padding-top:clamp(44px,5vw,92px);background:#f5f9ff}
+.hero-grid{grid-template-columns:1.08fr 1fr;gap:clamp(28px,5vw,90px)}
+.hero h1,.section-title h2,.valuation-intro h2,.marketing-layout h2,.faq-layout h2,.bottom-cta h2{font-family:Arial,Helvetica,sans-serif;font-weight:850;line-height:1.04;letter-spacing:-.075em}
+.hero h1{font-size:clamp(55px,6.7vw,108px);margin:22px 0}
+.hero h1 em,.section-title h2 em,.valuation-intro h2 em,.marketing-layout h2 em,.bottom-cta h2 em{font-style:normal;color:#2456d3}
+.hero-copy>p:not(.eyebrow){color:#465d7c}
+.primary,.next{background:#2456d3;color:#fff;border-radius:10px;min-height:54px;font-size:14px;font-weight:800}
+.primary:hover,.next:hover{background:#173f9e}
+.hero-art,.hero-art img{border-radius:22px;overflow:hidden}
+.hero-art img{filter:saturate(1.06);object-fit:cover;object-position:53% center}
+.art-caption{background:#ffffffef;border-radius:8px;color:#344663}
+.value-strip{background:#fff;border:1px solid #dbe4f1;border-radius:15px;padding:22px 28px;box-shadow:0 7px 35px #1935610b}
+.value-strip strong,.why-list article span{color:#235ae0;font-family:Arial,sans-serif;font-style:normal;font-weight:800}
+.why-section,.process-section{background:#fff}
+.why-main .big-copy{font-family:Arial,sans-serif;font-weight:600}
+.why-list h3,.process-grid h3,.insight-grid h3{font-family:Arial,sans-serif;font-weight:750;letter-spacing:-.045em}
+.why-list p,.process-grid p,.insight-grid p,.why-main>p:last-child{color:#53698a}
+.valuation-section{background:#e6efff}
+.valuation-form{background:#fff;border:1px solid #d5e4f9;border-radius:22px;padding:clamp(26px,4vw,58px);box-shadow:0 26px 85px #12366c19}
+.valuation-form legend{font-family:Arial,sans-serif;font-weight:800;letter-spacing:-.05em}
+.wizard-top{color:#214aba}
+.wizard-track{background:#d4e1f7;height:5px;border-radius:20px;overflow:hidden}
+.wizard-track span{background:#2456d3}
+.form-grid input,.form-grid select,.form-grid textarea{border:1px solid #b8cde8;border-radius:9px;background:#fff;min-height:56px}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{border-color:#2456d3}
+.marketing-section{background:#f8faff}
+.marketing-layout img{border-radius:18px;object-fit:cover}
+.process-grid article{border-top:4px solid #2456d3;padding:26px 0}
+.insight-grid article{border:1px solid #dbe5f1;border-radius:14px;background:#fff}
+.faq-section{background:#ecf3ff}
+.faq-items{border-color:#c8d9ee}
+.faq-items details{border-color:#c8d9ee}
+.site-footer{background:#102854;color:#fff}
+.footer-inner p{color:#d8e4fc}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero{padding-top:45px}.hero h1{font-size:clamp(46px,8.5vw,75px)}}
+@media(max-width:600px){.hero-art,.hero-art img{border-radius:16px}.value-strip{padding:18px;border-radius:12px}.hero h1{font-size:clamp(45px,11vw,65px)}.valuation-form{border-radius:14px;padding:25px 20px}}
