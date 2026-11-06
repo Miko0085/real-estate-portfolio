@@ -60,3 +60,13 @@ a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 .investor-preview .art-mini,.investor-preview strong,.investor-preview .fake-control{position:relative;z-index:1}
 .investor-preview strong{font-size:clamp(40px,4vw,54px);text-shadow:0 1px 7px rgba(0,0,0,.16)}
 .investor-preview strong em{color:#fff;font-style:italic;font-weight:500}
+
+/* Real concept media replacing abstract portfolio preview placeholders */
+.art-luxury,.art-seller,.art-developer{color:#fff;background:#23333b}
+.luxury-visual,.seller-visual,.developer-visual{position:relative;isolation:isolate}
+.portfolio-art-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.luxury-visual::after,.seller-visual::after,.developer-visual::after{content:"";position:absolute;z-index:0;inset:0;background:linear-gradient(90deg,rgba(17,30,31,.79),rgba(17,30,31,.15) 98%),linear-gradient(0deg,rgba(18,29,31,.35),transparent 60%);pointer-events:none}
+.luxury-visual>*:not(.portfolio-art-photo),.seller-visual>*:not(.portfolio-art-photo),.developer-visual>*:not(.portfolio-art-photo){position:relative;z-index:1}
+.luxury-shape,.developer-shape{display:none}
+.art-luxury .art-mini,.art-luxury .art-small,.art-seller .art-mini,.art-developer .art-mini,.art-developer .art-small{color:#fff}
+.luxury-visual strong,.seller-visual strong,.developer-visual strong{color:#fff}

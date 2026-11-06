@@ -4,3 +4,12 @@ body{font-family:Arial,ui-sans-serif,system-ui,sans-serif;color:var(--ink);backg
 @media(max-width:1050px){.architecture-grid{grid-template-columns:1fr 1fr}.architecture-copy{padding:50px}.masterplan-grid,.amenities-grid,.enquire-section,.payment-grid{gap:45px}.residence-card img{height:330px}.amenities-grid>img{height:480px}}
 @media(max-width:800px){.vision-grid,.section-title,.amenity-intro,.masterplan-grid,.amenities-grid,.location-grid,.payment-grid,.enquire-section{grid-template-columns:1fr}.vision-grid,.section-title,.amenity-intro,.location-grid{gap:25px}.architecture-grid{grid-template-columns:1fr}.architecture-grid>img{min-height:390px;height:390px}.architecture-copy{padding:65px 30px}.enquire-section{gap:50px}.masterplan-grid figure{max-width:660px;margin:auto}.amenities-grid>img{height:400px}}
 @media(max-width:600px){.hero{min-height:640px}.hero h1{font-size:clamp(51px,12vw,82px)}.hero-copy{padding-top:110px}.hero-foot{font-size:8px}.vision-section,.residences-section,.amenities-section,.location-section,.enquire-section{padding-block:80px}.vision-grid{padding-top:38px}.vision-grid h2,.section-title h2,.amenity-intro h2{font-size:clamp(46px,10vw,67px)}.residence-grid{grid-template-columns:1fr}.residence-card img{height:290px}.residence-info h3{font-size:35px}.masterplan-section,.gallery-section,.payment-section{padding:80px 0}.masterplan-grid{gap:45px}.masterplan-legend{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr}.gallery-grid figure:first-child{grid-row:auto}.gallery-grid figure:first-child img,.gallery-grid img{height:270px}.location-grid img{height:310px}.payment-bar{height:65px}.interest-fields{grid-template-columns:1fr}}
+
+/* Media-complete architectural story. The concept film is manually initiated. */
+.concept-film-section{padding-block:clamp(72px,10vw,145px)}
+.film-header{display:flex;align-items:flex-end;justify-content:space-between;gap:45px;padding:36px 0}
+.film-header h2{font:400 clamp(46px,6vw,88px)/1 Georgia,serif;letter-spacing:-.05em}
+.film-header p{font-size:14px;line-height:1.75;color:#77675c;max-width:340px}
+.concept-film{display:block;width:100%;aspect-ratio:16/9;background:#342722;object-fit:cover;box-shadow:none}
+.concept-film:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media(max-width:650px){.film-header{flex-direction:column;align-items:flex-start;gap:20px}.concept-film-section{padding-block:70px}}
