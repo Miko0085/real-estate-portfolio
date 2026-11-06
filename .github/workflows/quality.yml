@@ -18,6 +18,8 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Unit tests
         run: npm test
+      - name: Check visual review prototypes
+        run: node scripts/check-design-review.mjs
       - name: Structural self-audit
         run: npm run audit:static
       - name: Check shared TypeScript sources

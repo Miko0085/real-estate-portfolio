@@ -14,6 +14,10 @@ for (const slug of projects) {
   if (!home.includes('real-estate-portfolio/' + slug)) throw new Error(`Incorrect base URL in build: ${slug}`);
 }
 
+const review = join('design-review','v4');
+if (!existsSync(join(review,'index.html'))) throw new Error('Missing visual review proposals');
+cpSync(review, join(out,'design-review','v4'), { recursive: true });
+
 for (const asset of ['index.html','styles.css','favicon.svg','og-cover.svg']) {
   cpSync(join('portfolio', asset), join(out, asset));
 }
