@@ -1,0 +1,30 @@
+---
+import Seo from '@estate/seo/Seo.astro';
+import { webPageSchema, breadcrumbs } from '@estate/structured-data';
+interface Props { title:string; description:string; }
+const {title,description} = Astro.props;
+const base=import.meta.env.BASE_URL.endsWith('/')?import.meta.env.BASE_URL:`${import.meta.env.BASE_URL}/`;
+const site=Astro.site||new URL('https://example.com');
+const canonical=new URL(Astro.url.pathname,site).toString();
+const ogImage=new URL(base+'og-cover.svg',site).toString();
+const index=import.meta.env.PUBLIC_INDEX_SITE==='true' && Boolean(import.meta.env.PUBLIC_SITE_URL) && import.meta.env.GITHUB_PAGES!=='true';
+const nav=[['Markets','markets'],['Opportunities','opportunities'],['Developments','developments'],['Calculator','calculator'],['Investor Brief','investor-brief']];
+const crumbs=[{name:'Home',url:new URL(base,site).toString()}];
+if(Astro.url.pathname!==base)crumbs.push({name:'Investor Brief',url:canonical});
+---
+<!doctype html>
+<html lang="en" data-analytics-enabled={import.meta.env.PUBLIC_ANALYTICS_ENABLED==='true'?'true':'false'}>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b2065" />
+<Seo title={title} description={description} canonical={canonical} image={ogImage} noindex={!index} jsonLd={[webPageSchema({name:title,description,url:canonical}),breadcrumbs(crumbs)]}/>
+<link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="preview-disclosure">NORTHLINE / PROPERTY ADVISORY CONCEPT <span>FICTIONAL PROPERTY STUDIES · NO LIVE OFFERS</span></div>
+<header class="header" id="site-header"><div class="nav-pill"><a class="wordmark" href={base} aria-label="NORTHLINE home">NORTHLINE<span class="wordmark-dot">.</span></a><nav class="nav-links" aria-label="Primary">{nav.map(([label,id])=><a href={`${base}#${id}`}>{label}</a>)}</nav><a class="nav-cta" href={`${base}#contact`}>Let's talk <span aria-hidden="true">↗</span></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav"><span class="bars"></span></button></div>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>{nav.map(([label,id])=><a href={`${base}#${id}`}>{label}</a>)}<a href={`${base}#contact`}>Contact</a></nav></header>
+<main id="main"><slot /></main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="wordmark" href={base}>NORTHLINE<span class="wordmark-dot">.</span></a><p>Independent fictional international property advisory design study.</p></div><div><small>EXPLORE</small><a href={`${base}#markets`}>Markets</a><a href={`${base}#opportunities`}>Opportunity studies</a><a href={`${base}#developments`}>New-build concepts</a></div><div><small>TOOLS</small><a href={`${base}#calculator`}>Yield calculator</a><a href={`${base}brief/`}>Investor brief</a><a href={`${base}#insights`}>Insights</a></div><div><small>DEMONSTRATION</small><a href={`${base}privacy/`}>Privacy &amp; demo notice</a><p>Fictional properties, illustrative figures. No real inventory or guaranteed returns.</p></div></div><div class="footer-bottom"><span>© NORTHLINE / PORTFOLIO CONCEPT</span><span>NOT A REAL ESTATE ADVERTISEMENT</span></div></div></footer>
+<script>import '@estate/analytics'; import '@estate/forms/portfolio';import '../scripts/investor.ts';import '../scripts/northline-ui.ts';</script>
+</body></html>
