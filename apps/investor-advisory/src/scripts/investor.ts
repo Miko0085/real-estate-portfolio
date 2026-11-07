@@ -31,6 +31,15 @@ const concepts: ConceptHome[] = [
   {market:'london',stage:'offplan',priceUSD:1700000,title:'New-build city residence',kind:'Development concept',objectives:['growth','diversify'],question:'Verify the actual developer, completion terms and warranty arrangements.',image:'market-london.webp'}
 ];
 
+const editorialPhotos:Record<string,string> = {
+  'market-dubai.webp':'https://images.unsplash.com/photo-1745750434535-5943ef2fd31a?auto=format&fit=crop&w=1100&q=80',
+  'market-lisbon.webp':'https://images.unsplash.com/photo-1775898879981-92b6d4537b19?auto=format&fit=crop&w=1100&q=80',
+  'market-london.webp':'https://images.unsplash.com/photo-1772339164384-e4eba87f08c0?auto=format&fit=crop&w=1100&q=80',
+  'opportunity-coast.webp':'https://images.unsplash.com/photo-1768463851972-c0a9fc7dc60c?auto=format&fit=crop&w=1100&q=80',
+  'opportunity-garden.webp':'https://images.unsplash.com/photo-1754765297157-d4f7c3c941e5?auto=format&fit=crop&w=1100&q=80',
+  'opportunity-city.webp':'https://images.unsplash.com/photo-1773668159554-cc536e381e09?auto=format&fit=crop&w=1100&q=80'
+};
+
 const quiz=document.querySelector<HTMLElement>('[data-quiz]');
 if(quiz){
   const steps=[...quiz.querySelectorAll<HTMLFieldSetElement>('[data-quiz-step]')];
@@ -124,7 +133,7 @@ if(quiz){
     const fmt=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
     for(const entry of selected){
       const article=document.createElement('article');article.className='nl-result-card';
-      const picture=document.createElement('img');picture.src=imagesBase+entry.image;picture.loading='lazy';picture.width=836;picture.height=470;picture.alt=`Fictional editorial image for ${marketNames[entry.market]}; not an available property`;
+      const picture=document.createElement('img');picture.src=editorialPhotos[entry.image] || imagesBase+entry.image;picture.loading='lazy';picture.width=836;picture.height=470;picture.alt=`Licensed market-context editorial photograph for ${marketNames[entry.market]}; this fictional example is not an available property`;
       const body=document.createElement('div');body.className='nl-result-copy';
       body.append(
         makeElement('span',`${marketNames[entry.market]} / ${entry.stage==='ready'?'Ready / resale':'New-build / off-plan'}`,'nl-result-overline'),
