@@ -1,0 +1,141 @@
+---
+import '../styles/motion.css';
+const base = import.meta.env.BASE_URL;
+const assets = `${base}assets/`;
+const media = `${base}media/`;
+const main = '/real-estate-portfolio/developer-project/';
+const chapters = [
+  {step:'01',title:'A quieter arrival.',text:'Natural materials frame an imagined coastal retreat.'},
+  {step:'02',title:'The outside draws closer.',text:'Open terraces, warm stone and a horizon without edges.'},
+  {step:'03',title:'Light becomes architecture.',text:'A study in shifting shadows and considered living.'}
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#191c18" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="description" content="An original GSAP + Astro motion study for a fictional coastal residential concept. Background film, moving sunlight, and a scroll-scrubbed architectural sequence." />
+  <title>SERA / COAST — Motion Lab V1 · Developer Design Review</title>
+  <link rel="canonical" href={new URL(base, Astro.site || 'https://miko0085.github.io')} />
+  <link rel="preload" as="image" href={`${assets}sera-hero.webp`} fetchpriority="high" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="demo-bar"><span>INDEPENDENT PORTFOLIO STUDY</span><span>Fictional architecture · Animated concept stills · No real development or availability</span></div>
+  <header class="site-nav" data-header>
+    <a href="#top" class="wordmark" aria-label="Sera Coast — beginning">SERA<span class="wordmark-slash">/</span>COAST<span class="wordmark-dot">.</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#vision">Concept</a>
+      <a href="#shadow">Light study</a>
+      <a href="#film">Architecture film</a>
+      <a href="#residences">Residences</a>
+    </nav>
+    <a class="nav-cta" href="#register">Explore the concept <span aria-hidden="true">↗</span></a>
+    <details class="mobile-menu"><summary aria-label="Open site navigation">Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Mobile navigation"><a href="#vision">Concept</a><a href="#shadow">Light study</a><a href="#film">Architecture film</a><a href="#residences">Residences</a><a href="#register">Explore the concept</a></nav></details>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img class="hero-poster" src={`${assets}sera-hero.webp`} alt="" width="1600" height="900" fetchpriority="high" />
+        <video class="hero-video" data-hero-video autoplay muted loop playsinline preload="metadata" poster={`${assets}sera-hero.webp`} aria-hidden="true">
+          <source src={`${media}sera-concept-motion.mp4`} type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div>
+        <svg class="hero-foliage-shadow" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs><filter id="blur-shadow"><feGaussianBlur stdDeviation="10"/></filter></defs>
+          <g class="shadow-branch" filter="url(#blur-shadow)" fill="#0e1d13" opacity=".58">
+            <path d="M-40 110Q180 100 565 -30" stroke="#0e1d13" stroke-width="19" fill="none"/>
+            <ellipse cx="95" cy="62" rx="78" ry="24" transform="rotate(-26 95 62)"/>
+            <ellipse cx="185" cy="154" rx="90" ry="24" transform="rotate(24 185 154)"/>
+            <ellipse cx="250" cy="39" rx="83" ry="23" transform="rotate(-25 250 39)"/>
+            <ellipse cx="370" cy="112" rx="82" ry="27" transform="rotate(18 370 112)"/>
+            <ellipse cx="420" cy="3" rx="95" ry="20" transform="rotate(-33 420 3)"/>
+          </g>
+        </svg>
+      </div>
+      <div class="hero-inner container">
+        <div class="hero-label" data-reveal-hero><span class="line-dot"></span> A FICTIONAL COASTAL CONCEPT <span class="hero-label-divider"></span> 2026 MOTION STUDY</div>
+        <h1 id="hero-title" class="hero-title"><span class="title-line" data-title-line>Space to</span><span class="title-line title-serif" data-title-line><i>be</i> still.</span></h1>
+        <p class="hero-lead" data-reveal-hero>Architecture shaped by the subtle movements of the world around us. A concept of stone, light and the sea.</p>
+        <div class="hero-actions" data-reveal-hero>
+          <a class="light-pill" href="#vision">Explore the vision <span aria-hidden="true">↗</span></a>
+          <a class="ghost-link" href="#film"><span class="play-circle" aria-hidden="true">▷</span> Experience the film</a>
+        </div>
+      </div>
+      <div class="hero-bottom container"><span class="hero-bottom-label">ARCHITECTURAL STORY / 01 — 05</span><button class="motion-switch" type="button" data-motion-toggle aria-pressed="true" aria-label="Pause moving film and shadows"><span class="motion-switch-dot"></span><span data-motion-label>Pause motion</span></button><a href="#vision" class="scroll-hint">Scroll to discover <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="vision section-light" id="vision" aria-labelledby="vision-title">
+      <div class="container vision-content">
+        <div class="section-kicker" data-reveal><span>01 / OUR VISION</span><span class="kicker-line"></span><span>DESIGNED TO FEEL DIFFERENT</span></div>
+        <div class="vision-layout"><h2 id="vision-title" class="display-title" data-reveal>Quiet is a <em>place.</em></h2><div class="vision-description" data-reveal><p>Some spaces ask for your attention. Others give it back.</p><p>SERA / COAST is an original demonstration of what a design-led coastal residence could feel like — considered materials, a gentle horizon, and architecture that settles into the landscape.</p><a href="#shadow" class="text-arrow">Discover our approach <span aria-hidden="true">↗</span></a></div></div>
+        <div class="vision-media" data-reveal><img src={`${assets}sera-pool.webp`} width="1600" height="900" loading="lazy" alt="Original AI-generated coastal pool and terrace architectural study; fictional property" /><span>IMAGE 01 / AN IMAGINED COASTLINE</span></div>
+      </div>
+    </section>
+
+    <section class="light-study" id="shadow" aria-labelledby="shadow-title">
+      <div class="light-study-grid">
+        <div class="light-panel" data-shadow-panel>
+          <img src={`${assets}sera-architecture.webp`} width="877" height="825" loading="lazy" alt="Conceptual warm stone facade with shaded terraces and a mature tree" />
+          <div class="light-panel-tone"></div>
+          <svg class="light-shadow-svg" viewBox="0 0 600 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><filter id="light-blur"><feGaussianBlur stdDeviation="13"/></filter></defs><g class="shadow-light-group" filter="url(#light-blur)" fill="#111915" opacity=".45"><path d="M-70 35C110 140 200 180 500 235" fill="none" stroke="#111915" stroke-width="18"/><ellipse cx="90" cy="126" rx="140" ry="29" transform="rotate(26 90 126)"/><ellipse cx="240" cy="178" rx="125" ry="34" transform="rotate(-23 240 178)"/><ellipse cx="400" cy="222" rx="115" ry="31" transform="rotate(28 400 222)"/><ellipse cx="140" cy="275" rx="96" ry="25" transform="rotate(-53 140 275)"/><ellipse cx="344" cy="316" rx="120" ry="24" transform="rotate(42 344 316)"/></g></svg>
+          <span class="light-panel-caption">SHADOW STUDY — ANIMATED OVERLAY</span>
+        </div>
+        <div class="light-copy">
+          <div class="section-kicker" data-reveal>02 / THE MATERIAL STUDY</div>
+          <h2 id="shadow-title" class="display-title display-title-light" data-reveal>Light is a <em>living</em> material.</h2>
+          <p data-reveal>The movement of branches can change how we experience a room. Here, a subtle animated layer casts shifting shadows across a fictional stone façade.</p>
+          <div class="light-controls" data-reveal><span class="little-accent"></span><span>Real-time CSS / SVG shadow overlay</span></div>
+          <button type="button" class="shadow-button" data-shadow-toggle aria-pressed="true"><span data-shadow-label>Pause shadow study</span><span aria-hidden="true">◯</span></button>
+          <span class="study-note">STUDY 02. This is procedural animation over original artwork, not real-world footage.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="film-scene" id="film" aria-labelledby="film-title">
+      <div class="film-pin" data-film-pin>
+        <div class="film-video-layer" aria-hidden="true">
+          <img src={`${assets}developer-desert.webp`} width="836" height="471" class="film-poster" alt="" loading="lazy" />
+          <video data-scrub-video muted playsinline preload="metadata" poster={`${assets}developer-desert.webp`} aria-hidden="true"><source src={`${media}developer-concept-motion.mp4`} type="video/mp4" /></video>
+          <div class="film-scrim"></div>
+        </div>
+        <div class="film-topline"><span>03 / THE ARCHITECTURE FILM</span><span>YOUR SCROLL IS THE PLAYHEAD</span></div>
+        <div class="film-copy container"><div class="film-text-block" data-film-copy><span class="chapter-count" data-chapter-index>01 / 03</span><h2 id="film-title" data-chapter-title>A quieter arrival.</h2><p data-chapter-description>Natural materials frame an imagined coastal retreat.</p></div></div>
+        <div class="film-progress"><div class="film-progress-bar"><span data-progress-fill></span></div><div class="film-progress-labels"><span>SCENE 01</span><span data-progress-percent>0%</span><span>SCENE 03</span></div></div>
+        <p class="film-mobile-note">Scroll to reveal the architecture</p>
+        <div class="film-fallback-note" data-film-fallback hidden>Static architectural poster shown while video is unavailable.</div>
+      </div>
+    </section>
+
+    <section class="residences section-light" id="residences" aria-labelledby="residences-title">
+      <div class="container">
+        <div class="section-kicker" data-reveal><span>04 / RESIDENCE STUDIES</span><span class="kicker-line"></span><span>AN IMAGINED COLLECTION</span></div>
+        <div class="residences-heading"><h2 id="residences-title" class="display-title" data-reveal>Room to <em>feel.</em></h2><p data-reveal>Two fictional home profiles. The images and dimensions are illustrative and do not represent any property available for purchase.</p></div>
+        <div class="residence-grid">
+          <a class="residence-card" href={`${main}#residences`} data-reveal>
+            <div class="residence-image"><img src={`${assets}residence-a.webp`} width="836" height="471" loading="lazy" alt="AI-generated concept interior with double-height window and skyline" /><span class="residence-number">01</span></div>
+            <div class="residence-details"><div><span>2 BEDROOM CONCEPT</span><h3>The Horizon</h3></div><span class="card-link" aria-label="Explore concept">↗</span></div>
+          </a>
+          <a class="residence-card" href={`${main}#residences`} data-reveal>
+            <div class="residence-image"><img src={`${assets}residence-b.webp`} width="836" height="471" loading="lazy" alt="AI-generated concept terrace residence surrounded by greenery" /><span class="residence-number">02</span></div>
+            <div class="residence-details"><div><span>3 BEDROOM CONCEPT</span><h3>The Sanctuary</h3></div><span class="card-link" aria-label="Explore concept">↗</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="end-scene" id="register" aria-labelledby="register-title">
+      <div class="end-photo" aria-hidden="true"><img src={`${assets}sera-hero.webp`} width="1600" height="900" loading="lazy" alt="" /></div>
+      <div class="end-content container"><span class="end-label" data-reveal>05 / THE NEXT CHAPTER</span><h2 id="register-title" data-reveal>Imagine what <em>comes next.</em></h2><p data-reveal>Explore the larger SERA / COAST concept portfolio — architecture, illustrative plans and an optional demo enquiry flow.</p><a href={main} class="light-pill" data-reveal>Visit the main concept site <span aria-hidden="true">↗</span></a><span class="end-disclaimer">FICTIONAL RESIDENTIAL DEVELOPMENT · NOT A REAL ESTATE OFFER</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>© 2026 SERA / COAST · DESIGN REVIEW</span><span>Animated stills, not real building footage. <a href={`${main}privacy/`}>Privacy &amp; demo notice</a></span><a href="#top">Back to top ↑</a></footer>
+  <script type="application/json" id="motion-chapters" set:html={JSON.stringify(chapters)}></script>
+  <script src="../scripts/motion.ts"></script>
+</body>
+</html>

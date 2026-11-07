@@ -28,6 +28,7 @@ jobs:
           npm run check:offplan
           node scripts/check-design-review.mjs
           node scripts/check-northline-v5.mjs
+          node scripts/check-developer-motion-review.mjs
       - name: Build
         env:
           GITHUB_PAGES: 'true'

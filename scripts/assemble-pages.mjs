@@ -21,6 +21,15 @@ const northlineReview = join('design-review', 'northline-v5');
 if (!existsSync(join(northlineReview, 'index.html')) || !existsSync(join(northlineReview, 'brief.html'))) throw new Error('Missing NORTHLINE V5 design-review pages');
 cpSync(northlineReview, join(out, 'design-review', 'northline-v5'), { recursive: true });
 
+const motionReview=join('design-review','developer-motion-v1','dist');
+if(!existsSync(join(motionReview,'index.html'))) throw new Error('Missing Astro motion review dist');
+const motionHtml=readFileSync(join(motionReview,'index.html'),'utf8');
+if(!motionHtml.includes('real-estate-portfolio/design-review/developer-motion-v1/')) throw new Error('Motion review base path incorrect');
+cpSync(motionReview, join(out,'design-review','developer-motion-v1'), { recursive:true });
+for(const file of ['assets/sera-hero.webp','assets/sera-architecture.webp','media/sera-concept-motion.mp4','media/developer-concept-motion.mp4'])
+  if(!existsSync(join(out,'design-review','developer-motion-v1',file))) throw new Error('Missing motion review asset: '+file);
+
+
 for (const asset of ['index.html','styles.css','favicon.svg','og-cover.svg']) {
   cpSync(join('portfolio', asset), join(out, asset));
 }

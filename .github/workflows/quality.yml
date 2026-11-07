@@ -20,6 +20,8 @@ jobs:
         run: npm test
       - name: Check visual review prototypes
         run: node scripts/check-design-review.mjs
+      - name: Check developer cinematic motion review
+        run: node scripts/check-developer-motion-review.mjs
       - name: Structural self-audit
         run: npm run audit:static
       - name: Check shared TypeScript sources
@@ -34,6 +36,8 @@ jobs:
           npm run build --workspace @estate/luxury-brokerage
           npm run build --workspace @estate/seller-leads
           npm run build --workspace @estate/developer-project
+      - name: Build Astro + GSAP developer motion review
+        run: npm run build --workspace @estate/developer-motion-review
       - name: Upload first site static output
         uses: actions/upload-artifact@v4
         with:
