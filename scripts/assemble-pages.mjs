@@ -26,6 +26,15 @@ if(!existsSync(join(motionReview,'index.html'))) throw new Error('Missing Astro 
 const motionHtml=readFileSync(join(motionReview,'index.html'),'utf8');
 if(!motionHtml.includes('real-estate-portfolio/design-review/developer-motion-v1/')) throw new Error('Motion review base path incorrect');
 cpSync(motionReview, join(out,'design-review','developer-motion-v1'), { recursive:true });
+const motionReviewV2 = join('design-review','developer-motion-v2','dist');
+if(!existsSync(join(motionReviewV2,'index.html'))) throw new Error('Missing developer motion V2 Astro build');
+const cinematicV2Html=readFileSync(join(motionReviewV2,'index.html'),'utf8');
+if(!cinematicV2Html.includes('real-estate-portfolio/design-review/developer-motion-v2/')) throw new Error('Developer motion V2 incorrect Pages base');
+cpSync(motionReviewV2,join(out,'design-review','developer-motion-v2'),{recursive:true});
+for(const asset of ['media/courtyard-light-loop.mp4','media/architecture-sequence.mp4','images/courtyard.webp','images/coastal-villa.webp']){
+  if(!existsSync(join(out,'design-review','developer-motion-v2',asset))) throw new Error('Missing developer V2 video/art: '+asset);
+}
+
 for(const file of ['assets/sera-hero.webp','assets/sera-architecture.webp','media/sera-concept-motion.mp4','media/developer-concept-motion.mp4'])
   if(!existsSync(join(out,'design-review','developer-motion-v1',file))) throw new Error('Missing motion review asset: '+file);
 

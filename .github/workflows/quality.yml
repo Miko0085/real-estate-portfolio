@@ -36,8 +36,12 @@ jobs:
           npm run build --workspace @estate/luxury-brokerage
           npm run build --workspace @estate/seller-leads
           npm run build --workspace @estate/developer-project
+      - name: Verify cinematic V2 source and media
+        run: node scripts/check-developer-motion-v2.mjs
       - name: Build Astro + GSAP developer motion review
         run: npm run build --workspace @estate/developer-motion-review
+      - name: Build cinematic V2 Astro + GSAP review
+        run: npm run build --workspace @estate/developer-motion-review-v2
       - name: Upload first site static output
         uses: actions/upload-artifact@v4
         with:

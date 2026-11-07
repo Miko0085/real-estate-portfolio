@@ -6,7 +6,8 @@
   "workspaces": [
     "apps/*",
     "packages/*",
-    "design-review/developer-motion-v1"
+    "design-review/developer-motion-v1",
+    "design-review/developer-motion-v2"
   ],
   "scripts": {
     "dev:offplan": "npm run dev --workspace @estate/dubai-offplan",

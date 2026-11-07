@@ -1,0 +1,91 @@
+---
+import '../styles/serav2.css';
+const base=import.meta.env.BASE_URL;
+const photo=(name:string)=>`${base}images/${name}`;
+const movie=(name:string)=>`${base}media/${name}`;
+const chapters=[
+ {number:'01',name:'The material',subtitle:'Stone holds the warmth of the day.',eyebrow:'AN ARCHITECTURAL LANGUAGE'},
+ {number:'02',name:'The horizon',subtitle:'A place where the landscape continues.',eyebrow:'THE COASTAL VIEW'},
+ {number:'03',name:'The stillness',subtitle:'Space for the rhythms that matter.',eyebrow:'LIFE AT SERA'}
+];
+const photos=[
+ {src:photo('courtyard.webp'),caption:'Courtyard / material study',label:'01 / THE COURTYARD'},
+ {src:photo('residence-interior.webp'),caption:'Residence / interior atmosphere',label:'02 / THE INTERIOR'},
+ {src:photo('coastal-villa.webp'),caption:'Residence / coastline',label:'03 / THE COAST'},
+ {src:photo('architecture-detail.webp'),caption:'Facade / architectural detail',label:'04 / THE FACADE'},
+ {src:photo('pool-terrace.webp'),caption:'Outdoor / coastal terrace',label:'05 / THE TERRACE'}
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#e9e0d1" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="description" content="SERA / COAST V2 — original architectural light and shadow motion study on Astro and GSAP. Fictional residence concept, not a real development." />
+  <title>SERA / COAST — Architectural Light & Shadow · Motion Study V2</title>
+  <link rel="canonical" href={new URL(base,Astro.site||'https://miko0085.github.io')} />
+  <link rel="preload" as="image" href={photo('courtyard.webp')} fetchpriority="high" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar" data-header>
+    <a class="logotype" href="#home" aria-label="Sera Coast, back to the beginning">SERA <span class="logotype-slash">/</span> COAST <small>ARCHITECTURAL STUDY</small></a>
+    <nav aria-label="Main navigation" class="desktop-navigation"><a href="#vision">Vision</a><a href="#sequence">Architecture</a><a href="#residences">Residences</a><a href="#enquire">Enquire</a></nav>
+    <div class="header-actions"><button type="button" class="sound-toggle" data-motion-toggle aria-pressed="true" aria-label="Pause ambient motion"><span class="sound-lines" aria-hidden="true"><i></i><i></i><i></i></span><span data-motion-label>Pause motion</span></button><a class="header-contact" href="#enquire">Inquire <span aria-hidden="true">↗</span></a><details class="mobile-navigation"><summary aria-label="Open site navigation">Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Mobile navigation"><a href="#vision">Our vision</a><a href="#sequence">Architecture film</a><a href="#residences">Residences</a><a href="#enquire">Contact</a></nav></details></div>
+  </header>
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-heading" data-hero>
+      <div class="hero-art" aria-hidden="true">
+        <img src={photo('courtyard.webp')} width="1672" height="941" alt="" fetchpriority="high" />
+        <video muted loop autoplay playsinline preload="metadata" data-hero-video poster={photo('courtyard.webp')} aria-hidden="true"><source src={movie('courtyard-light-loop.mp4')} type="video/mp4" /></video>
+        <div class="hero-media-overlay"></div>
+      </div>
+      <div class="hero-copy">
+        <div class="micro-label" data-intro>COASTAL RESIDENCES <span class="label-divider"></span> A CONCEPT STUDY</div>
+        <h1 id="hero-heading"><span class="clipline"><span data-headline>Where light</span></span><span class="clipline"><span data-headline><i>finds</i> its</span></span><span class="clipline"><span data-headline>place.</span></span></h1>
+        <p class="hero-description" data-intro>An imagined coastal world shaped by the way sunlight meets stone, landscape and the sea.</p>
+        <a class="hero-discover" href="#vision" data-intro><span class="round-arrow" aria-hidden="true">↓</span><span>Discover the vision</span></a>
+      </div>
+      <div class="hero-footer"><span>STUDY NO. 01 <span class="footer-separator">/</span> SERA / COAST</span><span class="hero-footer-right">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span></div>
+      <p class="hero-disclosure">FICTIONAL RESIDENTIAL DESIGN CONCEPT. VISUALS ARE ARCHITECTURAL ILLUSTRATIONS.</p>
+    </section>
+
+    <section class="statement" id="vision" aria-labelledby="statement-title">
+      <div class="statement-topline"><span>01 / THE VISION</span><span>THE QUIET IDEA OF HOME</span></div>
+      <div class="statement-body"><div class="statement-headline"><h2 id="statement-title">Some places<br /><em>simply belong.</em></h2></div><div class="statement-aside"><p>Before architecture becomes a building, it begins as a feeling.</p><p>SERA / COAST imagines a different relationship between a residence and its setting — where warm stone holds the light and every threshold opens toward the sea.</p><a href="#sequence" class="underlined-link">Follow the light <span aria-hidden="true">↗</span></a></div></div>
+      <div class="statement-bottomline"><span>A DESIGN-LED EXPLORATION</span><span>SCROLL DOWN TO CONTINUE</span></div>
+    </section>
+
+    <section class="cinema" id="sequence" aria-label="Architecture sequence driven by scrolling" data-cinema>
+      <div class="cinema-stage" data-cinema-stage>
+        <div class="cinema-image" aria-hidden="true"><img src={photo('coastal-villa.webp')} width="1672" height="941" loading="lazy" alt="" /><video muted playsinline preload="auto" data-scroll-video poster={photo('coastal-villa.webp')} aria-hidden="true"><source src={movie('architecture-sequence.mp4')} type="video/mp4" /></video><div class="cinema-gradient"></div></div>
+        <div class="cinema-topline"><span>02 / THROUGH THE ARCHITECTURE</span><span>SCROLL-CONTROLLED CONCEPT FILM</span></div>
+        <div class="cinema-caption" aria-live="polite"><p class="cinema-eyebrow" data-chapter-eyebrow>AN ARCHITECTURAL LANGUAGE</p><h2 data-chapter-title>The material</h2><p data-chapter-subtitle>Stone holds the warmth of the day.</p></div>
+        <div class="cinema-bottom"><span data-chapter-number>01 — 03</span><div class="cinema-progress" aria-label="Film progress"><div data-cinema-progress></div></div><span>FOLLOW THE LIGHT <span aria-hidden="true">↓</span></span></div>
+        <div class="chapter-rail" aria-hidden="true"><span>01</span><span>02</span><span>03</span></div>
+      </div>
+    </section>
+
+    <section class="interlude" id="architecture" aria-labelledby="interlude-title">
+      <div class="interlude-visual" aria-hidden="true"><img src={photo('architecture-detail.webp')} width="877" height="825" loading="lazy" alt="" /><div class="interlude-shadow"></div></div>
+      <div class="interlude-copy"><div class="micro-label">03 / THE MATERIAL STUDY</div><h2 id="interlude-title">Made to<br /><i>feel</i> like<br />nothing else.</h2><p>Warm stone. Filtered daylight. The quiet geometry of a façade designed to change as the sun moves.</p><span class="interlude-folio">AN IDEA IN MATERIAL, NOT A REAL BUILDING.</span></div>
+    </section>
+
+    <section class="residences" id="residences" aria-labelledby="residences-title">
+      <div class="residence-heading"><div><span class="micro-label">04 / A LIFE OF SPACE</span><h2 id="residences-title">Room for<br /><em>everything real.</em></h2></div><p>Imagined interiors and coastal terraces, connected by the same quiet architectural language. Explore the original visual concepts.</p></div>
+      <div class="residence-editorial"><button type="button" class="gallery-frame main-frame" data-gallery-open="0" aria-label="Open architectural image gallery: courtyard"><img src={photo('courtyard.webp')} alt="Conceptual travertine courtyard with olive tree and sunlit entrance" width="1672" height="941" loading="lazy"/><span>01 / THE COURTYARD</span><span class="image-plus" aria-hidden="true">+</span></button><div class="stacked-gallery"><button type="button" class="gallery-frame small-frame" data-gallery-open="1" aria-label="Open architectural image gallery: interior"><img src={photo('residence-interior.webp')} alt="Fictional warm contemporary living room facing the sea" width="836" height="471" loading="lazy"/><span>02 / THE INTERIOR</span><span class="image-plus" aria-hidden="true">+</span></button><button type="button" class="gallery-frame small-frame" data-gallery-open="2" aria-label="Open architectural image gallery: coastline"><img src={photo('coastal-villa.webp')} alt="Fictional stone villa and infinity pool at sunset" width="1672" height="941" loading="lazy"/><span>03 / THE COAST</span><span class="image-plus" aria-hidden="true">+</span></button></div></div>
+      <div class="residence-footer"><span>SELECT AN IMAGE TO VIEW THE COLLECTION</span><span>5 ARCHITECTURAL STUDIES <span aria-hidden="true">↗</span></span></div>
+    </section>
+
+    <section class="sea-epilogue" aria-labelledby="epilogue-heading"><div class="epilogue-image"><img src={photo('coastal-villa.webp')} width="1672" height="941" alt="Fictional coastal villa with terrace and an open sea horizon" loading="lazy"/></div><div class="epilogue-copy"><p class="micro-label">05 / THE COAST</p><h2 id="epilogue-heading">An address<br />for the <em>unhurried.</em></h2><a class="underlined-link" href="#enquire">Continue the story <span aria-hidden="true">↗</span></a></div></section>
+
+    <section class="enquire" id="enquire" aria-labelledby="enquire-heading"><div class="enquire-top"><span>06 / BEGIN A CONVERSATION</span><span>PORTFOLIO DEMONSTRATION / NOT A REAL DEVELOPMENT</span></div><div class="enquire-body"><div class="enquire-message"><h2 id="enquire-heading">Every story<br />starts <i>somewhere.</i></h2><p>A concept of atmosphere, architecture and the coastline. Explore how a cinematic development experience can introduce a project with restraint.</p></div><form class="enquire-form" data-demo-form><h3>Explore the concept</h3><label>YOUR NAME<input type="text" name="name" required minlength="2" autocomplete="name" placeholder="Full name"/></label><label>EMAIL ADDRESS<input type="email" name="email" required autocomplete="email" placeholder="name@example.com"/></label><label>YOUR INTEREST<select name="interest" required><option value="">Choose an interest</option><option value="architecture">Architecture / Design</option><option value="residences">Residences / Lifestyle</option><option value="partnership">Concept collaboration</option></select></label><label class="enquire-consent"><input type="checkbox" name="consent" required/> <span>I understand this is a fictional demonstration and my details will not be sent or stored.</span></label><button type="submit">Preview enquiry <span aria-hidden="true">↗</span></button><p class="form-status" data-form-status role="status" aria-live="polite">No CRM connected. This demonstration does not transmit or retain personal information.</p></form></div><div class="enquire-bottom"><a class="footer-wordmark" href="#home">SERA / COAST</a><p>Independent fictional architectural design demonstration. No real inventory, buildings, sales, commitments or offers.</p><a href="https://miko0085.github.io/real-estate-portfolio/design-review/developer-motion-v1/">Motion Lab V1</a></div></section>
+  </main>
+  <dialog class="gallery-dialog" data-gallery-dialog aria-label="Architectural illustration gallery"><button type="button" class="gallery-close" data-gallery-close aria-label="Close gallery">×</button><div class="gallery-modal-image"><img data-gallery-image alt=""/></div><div class="gallery-controls"><button type="button" data-gallery-prev aria-label="Previous image">←</button><div><span data-gallery-count>01 / 05</span><p data-gallery-caption>Courtyard / material study</p></div><button type="button" data-gallery-next aria-label="Next image">→</button></div><p class="gallery-disclaimer">ORIGINAL CONCEPT ART / NOT PHOTOGRAPHS OF REAL PROPERTIES</p></dialog>
+  <script type="application/json" id="chapters-data" set:html={JSON.stringify(chapters)}></script>
+  <script type="application/json" id="gallery-data" set:html={JSON.stringify(photos)}></script>
+  <script>import '../scripts/serav2.ts';</script>
+</body>
+</html>
