@@ -17,6 +17,9 @@ for (const slug of projects) {
 const review = join('design-review','v4');
 if (!existsSync(join(review,'index.html'))) throw new Error('Missing visual review proposals');
 cpSync(review, join(out,'design-review','v4'), { recursive: true });
+const northlineReview = join('design-review', 'northline-v5');
+if (!existsSync(join(northlineReview, 'index.html')) || !existsSync(join(northlineReview, 'brief.html'))) throw new Error('Missing NORTHLINE V5 design-review pages');
+cpSync(northlineReview, join(out, 'design-review', 'northline-v5'), { recursive: true });
 
 for (const asset of ['index.html','styles.css','favicon.svg','og-cover.svg']) {
   cpSync(join('portfolio', asset), join(out, asset));
