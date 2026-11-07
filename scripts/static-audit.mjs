@@ -22,7 +22,14 @@ for(const slug of implemented){
  verify(existsSync(join(base,'src/pages/privacy/index.astro')),`${slug}: privacy notice`);
  verify(existsSync(join(base,'public/favicon.svg')),`${slug}: favicon`);
  verify(existsSync(join(base,'public/og-cover.svg')),`${slug}: social image`);
- verify(main.includes('@estate/ui/PortfolioLayout.astro'),`${slug}: shared layout`);
+ const customShell=join(base,'src/layouts/NorthlineShell.astro');
+ const shell=slug==='investor-advisory' && existsSync(customShell)?readFileSync(customShell,'utf8'):'';
+ verify(main.includes('@estate/ui/PortfolioLayout.astro') || (
+   slug==='investor-advisory' && main.includes('NorthlineShell.astro') &&
+   shell.includes('@estate/seo/Seo.astro') &&
+   shell.includes('@estate/forms/portfolio') &&
+   shell.includes('@estate/analytics')
+ ),`${slug}: shared SEO, forms and analytics infrastructure`);
  verify(existsSync(join(base,'src/pages/sitemap.xml.ts')),`${slug}: sitemap`);
 }
 for(const path of ['packages/ui/src/PortfolioLayout.astro','packages/ui/src/portfolio-base.css','packages/forms/src/portfolio.ts','packages/utils/src/investment.ts'])verify(existsSync(join(root,path)),`shared ${path}`);
