@@ -1,0 +1,146 @@
+{
+  "hero": {
+    "source": "a_photorealistic_luxury_waterfront_residential_sce.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 222190
+  },
+  "crescent-exterior": {
+    "source": "golden_hour_waterfront_luxury_residence.png",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 324176
+  },
+  "crescent-alt": {
+    "source": "a_cinematic_photorealistic_architectural_scene_at.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 233312
+  },
+  "crescent-pool": {
+    "source": "a_hyper_realistic_architectural_luxury_waterfront.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 203752
+  },
+  "crescent-living": {
+    "source": "a_luxurious_modern_living_room_interior_in_neutral.png",
+    "width": 1050,
+    "height": 1400,
+    "bytes": 184144
+  },
+  "crescent-bedroom": {
+    "source": "a_luxurious_modern_bedroom_interior_scene_at_sunse.png",
+    "width": 1120,
+    "height": 1400,
+    "bytes": 144634
+  },
+  "crescent-kitchen": {
+    "source": "a_luxurious_modern_open_plan_kitchen_and_dining_ar.png",
+    "width": 1120,
+    "height": 1400,
+    "bytes": 140850
+  },
+  "crescent-spa": {
+    "source": "luxurious_curved_stone_spa_retreat.png",
+    "width": 1120,
+    "height": 1400,
+    "bytes": 182744
+  },
+  "gardens-exterior": {
+    "source": "golden_hour_garden_residence.png",
+    "width": 1120,
+    "height": 1400,
+    "bytes": 318036
+  },
+  "gardens-alt": {
+    "source": "a_realistic_architectural_exterior_scene_a_serene.png",
+    "width": 1050,
+    "height": 1400,
+    "bytes": 229366
+  },
+  "gardens-courtyard": {
+    "source": "a_photorealistic_luxury_residential_courtyard_scen.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 298518
+  },
+  "gardens-lobby": {
+    "source": "a_photorealistic_luxury_hotel_residential_lobby_in.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 211048
+  },
+  "gardens-bedroom": {
+    "source": "a_luxurious_modern_bedroom_with_a_neutral_warm_pa.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 231464
+  },
+  "gardens-bedroom2": {
+    "source": "a_luxurious_modern_bedroom_interior_in_warm_beige.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 217346
+  },
+  "gardens-kitchen": {
+    "source": "atelier_gardens_golden_hour_kitchen_retreat.png",
+    "width": 1120,
+    "height": 1400,
+    "bytes": 136590
+  },
+  "skyline-exterior": {
+    "source": "golden_hour_skyline_wharf_tower.png",
+    "width": 1120,
+    "height": 1400,
+    "bytes": 209016
+  },
+  "skyline-alt": {
+    "source": "a_highly_detailed_architectural_exterior_scene_at.png",
+    "width": 933,
+    "height": 1400,
+    "bytes": 189256
+  },
+  "skyline-lobby": {
+    "source": "sunset_marina_lobby_with_sculptural_elegance.png",
+    "width": 1120,
+    "height": 1400,
+    "bytes": 227638
+  },
+  "skyline-living": {
+    "source": "a_luxurious_modern_living_room_interior_in_a_high.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 190440
+  },
+  "skyline-penthouse": {
+    "source": "a_luxurious_modern_penthouse_living_room_interior.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 203964
+  },
+  "skyline-terrace": {
+    "source": "golden_hour_skyline_wharf_terrace.png",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 282390
+  },
+  "city-water": {
+    "source": "sunrise_serenity_over_dubai_waters.png",
+    "width": 1120,
+    "height": 1400,
+    "bytes": 157160
+  },
+  "design-stone": {
+    "source": "a_photorealistic_minimalist_luxury_modern_residen.png",
+    "width": 1050,
+    "height": 1400,
+    "bytes": 231492
+  },
+  "waterfront-lifestyle": {
+    "source": "sunset_waterfront_luxury_with_burj_khalifa_views.png",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 242956
+  }
+}

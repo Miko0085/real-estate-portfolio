@@ -14,6 +14,13 @@ for (const slug of projects) {
   if (!home.includes('real-estate-portfolio/' + slug)) throw new Error(`Incorrect base URL in build: ${slug}`);
 }
 
+// ATELIER RESIDENCES — static portfolio deployment
+const atelierSource = join('apps', 'atelier-residences');
+if (!existsSync(join(atelierSource, 'index.html'))) throw new Error('Missing Atelier site source');
+cpSync(atelierSource, join(out, 'atelier-residences'), { recursive: true, filter: (src) => !src.includes('node_modules') && !src.endsWith('README.md') });
+const atelierHtml = readFileSync(join(out, 'atelier-residences', 'index.html'), 'utf8');
+if (!atelierHtml.includes('/real-estate-portfolio/atelier-residences/')) throw new Error('Atelier Pages base missing');
+
 const review = join('design-review','v4');
 if (!existsSync(join(review,'index.html'))) throw new Error('Missing visual review proposals');
 cpSync(review, join(out,'design-review','v4'), { recursive: true });
