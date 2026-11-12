@@ -54,8 +54,16 @@ writeFileSync(join(out, 'robots.txt'), 'User-agent: *\nDisallow: /\n');
 writeFileSync(join(out, '404.html'), '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found</title><main style="font-family:system-ui;max-width:680px;margin:8vw auto;padding:24px"><h1>Page not found</h1><a href="/real-estate-portfolio/">Return to the portfolio</a></main></html>');
 
 const portfolio = readFileSync(join(out, 'index.html'), 'utf8');
-for (const slug of projects) {
+// All Astro applications are built and preserved, but only these five
+// projects are featured on the public portfolio index.
+const featuredProjects = ['atelier-residences', 'dubai-offplan', 'investor-advisory', 'luxury-brokerage', 'seller-leads'];
+for (const slug of featuredProjects) {
   if (!portfolio.includes(`href="./${slug}/"`)) throw new Error(`Missing navigation link: ${slug}`);
+  if (!existsSync(join(out, slug, 'index.html'))) throw new Error(`Featured website missing: ${slug}`);
+}
+if (portfolio.includes('href="./developer-project/"')) throw new Error('Retired Developer Project should not be featured');
+for (const asset of ['assets/hero.webp', 'assets/crescent-exterior.webp', 'styles.css', 'app.js']) {
+  if (!existsSync(join(out, 'atelier-residences', asset))) throw new Error('Missing Atelier asset: ' + asset);
 }
 if (!portfolio.includes('styles.css')) throw new Error('Portfolio stylesheet not linked');
 const expectedMedia = [
@@ -86,4 +94,4 @@ const dubaiPrivacy = readFileSync(join(out,'dubai-offplan','privacy','index.html
 for (const [page,expected] of [[dubaiRoot,'/real-estate-portfolio/dubai-offplan/'],[dubaiPrivacy,'/real-estate-portfolio/dubai-offplan/privacy/']]) {
  if (!page.includes('rel="canonical"') || !page.includes(expected)) throw new Error('Dubai canonical URL missing expected GitHub Pages base '+expected);
 }
-console.log('GitHub Pages build: real-estate website portfolio plus five real-estate applications.');
+console.log('GitHub Pages build: five featured websites, preserving legacy developer project and review pages.');
