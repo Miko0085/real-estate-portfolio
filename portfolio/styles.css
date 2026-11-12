@@ -94,3 +94,53 @@ a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 .art-developer .developer-visual::after{background:linear-gradient(90deg,rgba(33,19,17,.76),rgba(60,25,25,.12)),linear-gradient(0deg,rgba(34,21,18,.48),transparent)}
 .art-developer .developer-visual strong{font:400 clamp(42px,5vw,68px)/.93 Georgia,serif;letter-spacing:-.065em;color:#f6e9df}
 .art-developer .art-mini,.art-developer .art-small{color:#ebd3c6}
+
+
+/* Portfolio refresh — accurate brand previews and featured ATELIER RESIDENCES. */
+:root{--accent:#202527;--accent-hover:#3e4546;--radius:6px}
+.project{border-radius:6px;overflow:hidden}
+.project-featured{grid-template-columns:.9fr 1.1fr;min-height:510px}
+.portfolio-feature .featured-copy{justify-content:center;background:#f0f0ed}
+.portfolio-feature .featured-eyebrow{font-size:10px;font-weight:700;letter-spacing:.14em;color:#777e7c;margin:32px 0 0}
+.portfolio-feature .featured-copy h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(43px,5vw,73px);font-weight:400;letter-spacing:-.055em;line-height:.98;margin:14px 0 22px}
+.portfolio-feature .featured-copy h2 .blue-dot{color:#7c8a87}
+.portfolio-feature .btn-primary{border-radius:2px;background:#202624;color:#fff}
+.portfolio-feature .project-chips span{border-radius:2px}
+.portfolio-feature .featured-image{position:relative;isolation:isolate}
+.portfolio-feature .featured-image img{filter:contrast(1.04) brightness(.82);object-fit:cover}
+.portfolio-feature .featured-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),rgba(0,0,0,.05) 70%);pointer-events:none}
+.featured-brand-overlay{position:absolute;z-index:2;inset:28px 30px 55px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;color:white;pointer-events:none;text-shadow:0 1px 12px #2228}
+.featured-brand-overlay>span{font:500 16px/1.05 Georgia,serif;letter-spacing:.09em}
+.featured-brand-overlay small{display:block;font:500 9px/1.8 Inter,sans-serif;letter-spacing:.34em}
+.featured-brand-overlay strong{font:400 clamp(27px,3vw,44px)/1.04 Georgia,serif;letter-spacing:-.04em}
+.featured-brand-overlay em{font:600 10px/1.2 Inter,sans-serif;letter-spacing:.14em;font-style:normal;border:1px solid #fff9;padding:12px 18px}
+.portfolio-feature .image-caption{z-index:3}
+.portfolio-tile .portfolio-preview{height:315px;display:block;position:relative;overflow:hidden;color:#fff;text-decoration:none;isolation:isolate;background:#272d2b}
+.portfolio-preview>img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.portfolio-preview:hover>img{transform:scale(1.035)}
+.preview-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.1)),linear-gradient(0deg,rgba(0,0,0,.48),transparent 65%);pointer-events:none}
+.preview-navigation{position:absolute;top:24px;left:27px;right:27px;display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:11px;letter-spacing:.1em}
+.preview-menu{font-size:9px;letter-spacing:.12em}
+.preview-copy{position:absolute;bottom:26px;left:28px;right:28px;display:flex;align-items:flex-start;flex-direction:column}
+.preview-copy small{font-size:9px;letter-spacing:.17em;font-weight:700;margin-bottom:13px}
+.preview-copy strong{font-weight:700;font-size:clamp(29px,3.5vw,50px);line-height:1.04;letter-spacing:-.05em}
+.preview-copy strong i{font-style:italic;font-weight:400}
+.preview-action{font-size:10px;font-weight:700;letter-spacing:.12em;margin-top:22px;border-bottom:1px solid currentColor;padding-bottom:8px}
+.preview-count{position:absolute;right:25px;bottom:26px;font-size:10px;letter-spacing:.09em}
+.tile-maris .preview-scrim{background:linear-gradient(90deg,rgba(15,38,48,.71),rgba(15,38,48,.12)),linear-gradient(0deg,rgba(12,40,45,.44),transparent 65%)}
+.tile-maris .preview-copy strong{font-family:Georgia,serif;font-weight:400}
+.tile-northline .preview-scrim{background:linear-gradient(90deg,rgba(20,37,45,.79),rgba(20,37,45,.08)),linear-gradient(0deg,rgba(15,28,38,.35),transparent)}
+.tile-northline .preview-copy strong{font-family:Georgia,serif;font-weight:400}
+.tile-estates .portfolio-preview>img{filter:grayscale(1) contrast(1.13) brightness(.74)}
+.tile-estates .preview-scrim{background:linear-gradient(90deg,rgba(0,0,0,.76),rgba(0,0,0,.04))}
+.tile-estates .preview-copy strong{font-family:Arial,Helvetica,sans-serif;font-weight:900;letter-spacing:-.07em}
+.tile-fieldnote .portfolio-preview{color:#1d3c32;background:#eef3ee}
+.tile-fieldnote .portfolio-preview>img{filter:brightness(1.18) saturate(.72)}
+.tile-fieldnote .preview-scrim{background:linear-gradient(90deg,rgba(243,247,238,.95),rgba(240,246,233,.15)),linear-gradient(0deg,rgba(233,241,231,.3),transparent)}
+.tile-fieldnote .preview-copy strong{font-family:Georgia,serif;font-weight:400}
+.tile-fieldnote .preview-action{border-color:#1d3c32}
+.portfolio-tile .project-info{min-height:260px;display:flex;flex-direction:column}
+.portfolio-tile .project-bottom{margin-top:auto}
+@media(max-width:800px){.portfolio-feature .featured-copy h2{font-size:clamp(43px,7vw,64px)}.portfolio-tile .portfolio-preview{height:290px}}
+@media(max-width:650px){.project-featured{grid-template-columns:1fr}.portfolio-feature .featured-copy{min-height:350px}.portfolio-feature .featured-image{min-height:370px}.portfolio-tile .portfolio-preview{height:280px}.portfolio-tile .project-info{min-height:0}.featured-brand-overlay{inset:22px 22px 46px}.preview-copy strong{font-size:clamp(30px,8vw,44px)}}
+@media(prefers-reduced-motion:reduce){.portfolio-preview>img{transition:none}.portfolio-preview:hover>img{transform:none}}
