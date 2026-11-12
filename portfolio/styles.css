@@ -177,3 +177,62 @@ a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
 .portfolio-tile .project-info p{line-height:1.65}
 @media(max-width:800px){.portfolio-tile .portfolio-preview{aspect-ratio:16/10}}
 @media(max-width:650px){.portfolio-tile .portfolio-preview{aspect-ratio:16/10}.portfolio-tile .portfolio-preview>.preview-copy strong{font-size:clamp(28px,7.2vw,42px)}}
+
+
+/* ATELIER featured card: reserve separate vertical regions for heading, CTA and caption. */
+.portfolio-feature .featured-image{position:relative;overflow:hidden;isolation:isolate}
+.portfolio-feature .featured-brand-overlay{
+  position:absolute;
+  z-index:2;
+  top:28px;
+  left:30px;
+  right:30px;
+  bottom:118px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  pointer-events:none;
+}
+.portfolio-feature .featured-brand-overlay strong{
+  display:block;
+  max-width:94%;
+  font-size:clamp(27px,2.8vw,42px);
+  line-height:1.06;
+  flex:0 1 auto;
+}
+.portfolio-feature .featured-brand-overlay em{
+  display:inline-flex;
+  flex:none;
+  align-items:center;
+  margin-top:8px;
+  padding:10px 15px;
+  line-height:1.2;
+  white-space:normal;
+}
+.portfolio-feature .image-caption{
+  position:absolute;
+  z-index:3;
+  left:20px;
+  right:20px;
+  bottom:18px;
+  min-height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin:0;
+  padding:11px 16px;
+  border-radius:12px;
+}
+@media(max-width:800px){
+  .portfolio-feature .featured-brand-overlay{bottom:116px}
+  .portfolio-feature .featured-brand-overlay strong{font-size:clamp(26px,3.8vw,38px)}
+}
+@media(max-width:650px){
+  .portfolio-feature .featured-image{min-height:410px}
+  .portfolio-feature .featured-brand-overlay{top:22px;left:22px;right:22px;bottom:114px}
+  .portfolio-feature .featured-brand-overlay strong{max-width:100%;font-size:clamp(26px,7vw,35px)}
+  .portfolio-feature .image-caption{left:14px;right:14px;bottom:14px;padding:11px 13px;font-size:9px}
+}
